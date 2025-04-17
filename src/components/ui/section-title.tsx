@@ -37,7 +37,7 @@ export function SectionTitle({
       {
         root: null,
         rootMargin: "0px",
-        threshold: a0.1,
+        threshold: 0.1,
       }
     );
 
