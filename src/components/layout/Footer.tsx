@@ -1,0 +1,78 @@
+
+import { Link } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import Logo from "./Logo";
+
+export default function Footer() {
+  return (
+    <footer className="bg-muted/50 py-12 mt-12">
+      <div className="container grid gap-8 md:grid-cols-4">
+        <div className="space-y-4">
+          <Logo />
+          <p className="text-muted-foreground text-sm">
+            Mentoring minds, shaping futures by bridging research, technology, and education.
+          </p>
+          <div className="flex space-x-4">
+            <a href="#" className="text-muted-foreground hover:text-primary">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary">
+              <Instagram className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="font-medium text-lg mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><Link to="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
+            <li><Link to="/about" className="text-muted-foreground hover:text-primary">About</Link></li>
+            <li><Link to="/services" className="text-muted-foreground hover:text-primary">Services</Link></li>
+            <li><Link to="/vivum-app" className="text-muted-foreground hover:text-primary">Vivum.App</Link></li>
+            <li><Link to="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-medium text-lg mb-4">Contact Us</h3>
+          <ul className="space-y-2">
+            <li className="flex items-center">
+              <Mail className="h-4 w-4 mr-2 text-muted-foreground" />
+              <a href="mailto:info@advivum.im" className="text-muted-foreground hover:text-primary">info@advivum.im</a>
+            </li>
+            <li className="flex items-center">
+              <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
+              <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">+1 (234) 567-890</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-medium text-lg mb-4">Newsletter</h3>
+          <p className="text-muted-foreground text-sm mb-4">
+            Subscribe to our newsletter for updates and insights.
+          </p>
+          <div className="flex gap-2">
+            <Input type="email" placeholder="Your email" className="max-w-[220px]" />
+            <Button type="submit">Subscribe</Button>
+          </div>
+        </div>
+      </div>
+      <div className="container mt-8 pt-8 border-t text-center text-muted-foreground text-sm">
+        <p>© {new Date().getFullYear()} AD Vivum. All rights reserved. <a href="https://advivum.im" className="hover:text-primary">advivum.im</a></p>
+        <div className="mt-2 space-x-4">
+          <Link to="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
+          <Link to="/terms-of-service" className="hover:text-primary">Terms of Service</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
