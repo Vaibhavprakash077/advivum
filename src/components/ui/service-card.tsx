@@ -28,7 +28,7 @@ export function ServiceCard({
     <Card 
       className={cn(
         "overflow-hidden h-full transition-all duration-300 border border-border/40",
-        "hover:shadow-xl hover:-translate-y-1 hover:border-primary/20 group",
+        "hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 group",
         className
       )}
     >

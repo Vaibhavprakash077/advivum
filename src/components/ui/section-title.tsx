@@ -37,7 +37,7 @@ export function SectionTitle({
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.1,
+        threshold: a0.1,
       }
     );
 
@@ -65,7 +65,7 @@ export function SectionTitle({
     >
       <h2 className={cn(
         "text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl relative inline-block",
-        gradient && "bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        gradient ? "bg-gradient-to-r from-primary via-primary/90 to-secondary bg-clip-text text-transparent" : ""
       )}>
         {title}
       </h2>
@@ -80,7 +80,7 @@ export function SectionTitle({
       
       {subtitle && (
         <p className={cn(
-          "text-lg text-muted-foreground max-w-3xl mx-auto mt-4 transition-opacity duration-700 delay-300",
+          "text-lg text-muted-foreground max-w-3xl mt-4 transition-opacity duration-700 delay-300",
           align === "center" ? "mx-auto" : align === "right" ? "ml-auto" : "",
           isVisible ? "opacity-100" : "opacity-0"
         )}>

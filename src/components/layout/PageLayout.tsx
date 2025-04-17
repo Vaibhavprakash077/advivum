@@ -39,7 +39,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
       <Button
         variant="outline"
         size="icon"
-        className="fixed right-4 top-20 z-50 rounded-full shadow-md border border-border"
+        className="fixed right-4 top-20 z-50 rounded-full shadow-md border border-border bg-background/80 backdrop-blur-sm hover:bg-background/90"
         onClick={toggleDarkMode}
       >
         {isDarkMode ? (
