@@ -8,6 +8,7 @@ import { HeroSection } from "@/components/ui/hero-section";
 import { ServiceCard } from "@/components/ui/service-card";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { CourseCard } from "@/components/ui/course-card";
+import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
 import Logo from "@/components/layout/Logo";
 
 // Sample data for testimonials
@@ -86,6 +87,11 @@ export default function Index() {
         description="Advivum empowers researchers and learners through mentorship, publication support, innovative AI tools, and expert-led courses."
         ctaText="Explore Our Services"
         ctaLink="/services"
+        ctaSecondaryText="Learn More"
+        ctaSecondaryLink="/about"
+        trustBadges={<TrustBadges badges={defaultBadges} className="mt-8" />}
+        backgroundImage="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
+        darkOverlay={true}
       />
 
       {/* Services Overview */}
@@ -94,6 +100,8 @@ export default function Index() {
           <SectionTitle 
             title="Our Services" 
             subtitle="Comprehensive support for your research and learning journey"
+            showLine={true}
+            revealOnScroll={true}
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -103,6 +111,22 @@ export default function Index() {
               icon={<BookOpen className="h-10 w-10" />}
               linkHref="/services#mentorship"
               className="animate-fade-in [animation-delay:200ms]"
+              hoverContent={
+                <ul className="text-sm space-y-2 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>One-on-one sessions with experts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Customized research plan development</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Regular progress tracking and feedback</span>
+                  </li>
+                </ul>
+              }
             />
             
             <ServiceCard
@@ -111,6 +135,22 @@ export default function Index() {
               icon={<FileCheck className="h-10 w-10" />}
               linkHref="/services#publication"
               className="animate-fade-in [animation-delay:400ms]"
+              hoverContent={
+                <ul className="text-sm space-y-2 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Journal selection guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Manuscript editing and formatting</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Response to reviewer comments</span>
+                  </li>
+                </ul>
+              }
             />
             
             <ServiceCard
@@ -119,6 +159,22 @@ export default function Index() {
               icon={<GraduationCap className="h-10 w-10" />}
               linkHref="/services#courses"
               className="animate-fade-in [animation-delay:600ms]"
+              hoverContent={
+                <ul className="text-sm space-y-2 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Live online and in-person options</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Hands-on practical exercises</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Certification upon completion</span>
+                  </li>
+                </ul>
+              }
             />
             
             <ServiceCard
@@ -127,6 +183,22 @@ export default function Index() {
               icon={<Sparkles className="h-10 w-10" />}
               linkHref="/vivum-app"
               className="animate-fade-in [animation-delay:800ms]"
+              hoverContent={
+                <ul className="text-sm space-y-2 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Automated data extraction</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Intelligent analysis tools</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Collaboration features</span>
+                  </li>
+                </ul>
+              }
             />
           </div>
         </div>
@@ -138,6 +210,9 @@ export default function Index() {
           <SectionTitle 
             title="Specialized Solutions" 
             subtitle="Supporting researchers and organizations at every step"
+            showLine={true}
+            gradient={true}
+            revealOnScroll={true}
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -182,6 +257,8 @@ export default function Index() {
           <SectionTitle 
             title="Featured Courses" 
             subtitle="Enhance your skills with our expert-led programs"
+            revealOnScroll={true}
+            showLine={true}
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -195,7 +272,7 @@ export default function Index() {
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90">
               <a href="https://vivum.im" target="_blank" rel="noopener noreferrer">
                 View All Courses
               </a>
@@ -209,7 +286,7 @@ export default function Index() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Discover Vivum.App</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Discover Vivum.App</h2>
               <p className="text-lg mb-6">
                 Our AI-powered platform for evidence synthesis is transforming research efficiency.
                 Streamline your literature review process and focus on insights rather than data management.
@@ -232,19 +309,19 @@ export default function Index() {
                   <span>Time-saving analysis tools</span>
                 </li>
               </ul>
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
                 <a href="https://vivum.app" target="_blank" rel="noopener noreferrer">
                   Sign Up Now
                 </a>
               </Button>
             </div>
-            <div className="relative rounded-lg overflow-hidden shadow-xl animate-slide-in-right">
+            <div className="relative rounded-lg overflow-hidden shadow-xl animate-slide-in-right group transform transition-all duration-500 hover:scale-105">
               <img 
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1000&auto=format&fit=crop" 
                 alt="Vivum.App Interface" 
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg transform transition-all duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-8">
                 <div className="text-white">
                   <h3 className="text-2xl font-bold mb-2">Vivum.App</h3>
                   <p>Revolutionizing evidence synthesis and research workflows</p>
@@ -261,6 +338,8 @@ export default function Index() {
           <SectionTitle 
             title="What Our Users Say" 
             subtitle="Hear from researchers and students who've partnered with us"
+            showLine={true}
+            revealOnScroll={true}
           />
           
           <TestimonialSlider testimonials={testimonials} />
@@ -268,17 +347,17 @@ export default function Index() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 bg-primary/10">
+      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-muted/30 to-secondary/5">
         <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 animate-fade-in">Ready to Start Your Journey?</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms]">
             Join AD Vivum today and transform your research and learning experience with expert guidance and cutting-edge tools.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button asChild size="lg">
+          <div className="flex flex-wrap gap-4 justify-center animate-fade-in [animation-delay:400ms]">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
               <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
               <Link to="/services">Explore Services</Link>
             </Button>
           </div>
