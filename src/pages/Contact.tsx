@@ -16,6 +16,7 @@ import {
   Calendar, 
   CheckCircle 
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -27,20 +28,28 @@ export default function Contact() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formState);
-      setIsSubmitting(false);
+
+    try {
+      const { name, email, message } = formState;
+      const { error: supabaseError } = await supabase
+        .from("contacts")
+        .insert([{ name, email, message }]);
+      if (supabaseError) {
+        setError("Sorry, something went wrong. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
       setIsSubmitted(true);
       setFormState({
         name: "",
@@ -48,12 +57,13 @@ export default function Contact() {
         subject: "",
         message: "",
       });
-      
-      // Reset submission status after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
+      setIsSubmitting(false);
+      // Hide the success message after 5s
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (e: any) {
+      setError("Sorry, something went wrong. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -135,6 +145,12 @@ export default function Contact() {
                       required
                     />
                   </div>
+
+                  {error && (
+                    <div className="text-red-600 bg-red-50 border border-red-100 rounded p-3">
+                      {error}
+                    </div>
+                  )}
                   
                   <Button type="submit" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? (
@@ -154,7 +170,7 @@ export default function Contact() {
                 </form>
               )}
             </div>
-            
+
             {/* Contact Information */}
             <div className="animate-fade-in [animation-delay:300ms]">
               <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
