@@ -81,7 +81,7 @@ export default function ProfilePage() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full" disabled={upsertProfile.isLoading}>
+            <Button type="submit" className="w-full" disabled={upsertProfile.isPending}>
               {profile ? "Update" : "Create"} Profile
             </Button>
             {profile && (
