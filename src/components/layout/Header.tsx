@@ -43,7 +43,7 @@ export default function Header() {
         "transition-all duration-300",
         scrolled ? "h-14" : "h-16"
       )}>
-        
+        <Logo />
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
