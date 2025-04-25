@@ -73,12 +73,13 @@ const featuredCourses = [
 export default function Index() {
   return (
     <PageLayout>
+      {/* Hero Section with Logo */}
       <HeroSection
         title={
           <div className="flex flex-col items-center">
             <div className="text-6xl md:text-8xl mb-4 animate-scale-in flex items-center">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Vanamo_Logo.svg/1200px-Vanamo_Logo.svg.png"
+                src="/vivum-logo.png"
                 alt="Logo"
                 className="h-16 w-16 md:h-20 md:w-20 mr-4"
               />
