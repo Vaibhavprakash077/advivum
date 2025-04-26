@@ -40,9 +40,9 @@ export function TrustBadges({ badges, className }: TrustBadgesProps) {
 
 export const defaultBadges: TrustBadge[] = [
   {
-    icon: <Star className="h-5 w-5 text-white" />,
-    title: "4.9/5 stars on G2",
-    description: "Top-rated research mentorship platform"
+    icon: <Award className="h-5 w-5 text-white" />,
+    title: "Excellence in Research",
+    description: "Top-rated research mentorship and support"
   },
   {
     icon: <Award className="h-5 w-5 text-white" />,
