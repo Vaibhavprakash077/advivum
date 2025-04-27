@@ -32,21 +32,21 @@ export function ServiceCard({
         className
       )}
     >
-      <CardHeader>
+      <CardHeader className="flex flex-col items-center text-center">
         {icon && (
-          <div className="text-primary mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:text-secondary">
+          <div className="text-primary mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:text-secondary flex items-center justify-center">
             {icon}
           </div>
         )}
         <CardTitle className="transition-colors duration-300 group-hover:text-primary">{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardDescription className="text-center">{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-2">
+        <div className="space-y-2 flex flex-col items-center justify-center">
           {hoverContent}
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex justify-center">
         {hoverContent ? (
           <HoverCard>
             <HoverCardTrigger asChild>
