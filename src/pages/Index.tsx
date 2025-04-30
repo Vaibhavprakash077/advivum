@@ -272,14 +272,14 @@ export default function Index() {
               <CourseCard
                 key={index}
                 {...course}
-                link="https://vivum.im"
+                link="https://vivum.im/login/index.php"
               />
             ))}
           </div>
           
           <div className="text-center mt-12">
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90">
-              <a href="https://vivum.im" target="_blank" rel="noopener noreferrer">
+              <a href="https://vivum.im/login/index.php" target="_blank" rel="noopener noreferrer">
                 View All Courses
               </a>
             </Button>

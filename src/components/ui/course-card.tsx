@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom";
 import { ArrowRight, CalendarIcon, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,7 +28,7 @@ export function CourseCard({
   date,
   duration,
   format,
-  link = "#",
+  link = "https://vivum.im/login/index.php",
   image,
   category,
 }: CourseCardProps) {
@@ -76,9 +75,9 @@ export function CourseCard({
       </CardContent>
       <CardFooter>
         <Button asChild>
-          <Link to={link}>
+          <a href="https://vivum.im/login/index.php" target="_blank" rel="noopener noreferrer">
             Register Now <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </CardFooter>
     </Card>
