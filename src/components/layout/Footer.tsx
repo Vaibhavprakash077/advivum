@@ -67,7 +67,14 @@ export default function Footer() {
         </div>
       </div>
       <div className="container mt-8 pt-8 border-t text-center text-muted-foreground text-sm">
-        <p>© {new Date().getFullYear()} AD Vivum. All rights reserved. <a href="https://advivum.im" className="hover:text-primary">advivum.im</a></p>
+        <div className="flex justify-center items-center mb-3">
+          <img
+            src="/lovable-uploads/ee63d07c-1c67-4164-9144-ed5a069be38d.png"
+            alt="AD Vivum Logo"
+            className="h-6 w-6 mr-2 object-contain"
+          />
+          <p>© {new Date().getFullYear()} AD Vivum. All rights reserved. <a href="https://advivum.im" className="hover:text-primary">advivum.im</a></p>
+        </div>
         <div className="mt-2 space-x-4">
           <Link to="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
           <Link to="/terms-of-service" className="hover:text-primary">Terms of Service</Link>
