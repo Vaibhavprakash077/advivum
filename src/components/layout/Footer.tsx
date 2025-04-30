@@ -46,11 +46,11 @@ export default function Footer() {
           <ul className="space-y-2">
             <li className="flex items-center">
               <Mail className="h-4 w-4 mr-2 text-muted-foreground" />
-              <a href="mailto:info@advivum.im" className="text-muted-foreground hover:text-primary">info@advivum.im</a>
+              <a href="mailto:connect@vivum.im" className="text-muted-foreground hover:text-primary">connect@vivum.im</a>
             </li>
             <li className="flex items-center">
               <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
-              <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">+1 (234) 567-890</a>
+              <a href="tel:+919021699000" className="text-muted-foreground hover:text-primary">+91 9021699000</a>
             </li>
           </ul>
         </div>

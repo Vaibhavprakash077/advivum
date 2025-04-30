@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -185,8 +184,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Email</h3>
-                    <a href="mailto:info@advivum.im" className="text-muted-foreground hover:text-primary">
-                      info@advivum.im
+                    <a href="mailto:connect@vivum.im" className="text-muted-foreground hover:text-primary">
+                      connect@vivum.im
                     </a>
                   </div>
                 </div>
@@ -197,8 +196,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Phone</h3>
-                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">
-                      +1 (234) 567-890
+                    <a href="tel:+919021699000" className="text-muted-foreground hover:text-primary">
+                      +91 9021699000
                     </a>
                   </div>
                 </div>
@@ -318,12 +317,12 @@ export default function Contact() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button asChild size="lg">
-              <a href="mailto:info@advivum.im">
+              <a href="mailto:connect@vivum.im">
                 Email Us <Mail className="ml-2 h-4 w-4" />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="tel:+1234567890">
+              <a href="tel:+919021699000">
                 Call Us <Phone className="ml-2 h-4 w-4" />
               </a>
             </Button>
