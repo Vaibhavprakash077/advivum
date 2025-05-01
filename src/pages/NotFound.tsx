@@ -24,6 +24,10 @@ const NotFound = () => {
             src="/lovable-uploads/ee63d07c-1c67-4164-9144-ed5a069be38d.png"
             alt="AD Vivum Logo"
             className="h-16 w-16 object-contain mx-auto mb-4 animate-pulse"
+            style={{ 
+              filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
+              background: "transparent"
+            }}
           />
           <h1 className="text-7xl font-bold text-primary">404</h1>
           <h2 className="text-3xl font-semibold">Page Not Found</h2>

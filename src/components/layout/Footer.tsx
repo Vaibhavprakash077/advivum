@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -72,6 +71,10 @@ export default function Footer() {
             src="/lovable-uploads/ee63d07c-1c67-4164-9144-ed5a069be38d.png"
             alt="AD Vivum Logo"
             className="h-6 w-6 mr-2 object-contain"
+            style={{ 
+              filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
+              background: "transparent"
+            }}
           />
           <p>© {new Date().getFullYear()} AD Vivum. All rights reserved. <a href="https://advivum.im" className="hover:text-primary">advivum.im</a></p>
         </div>
