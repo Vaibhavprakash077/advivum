@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link to="/" className="flex items-center space-x-2 group">
       <img
-        src="/lovable-uploads/e1dc064f-54dd-47d7-a5b3-e7b48fabccb6.png"
+        src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
         alt="AD Vivum Logo"
         className="h-7 w-7 object-contain group-hover:animate-pulse"
         style={{ 

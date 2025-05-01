@@ -78,7 +78,7 @@ export default function Index() {
           <div className="flex flex-col items-center">
             <div className="text-6xl md:text-8xl mb-4 animate-scale-in flex items-center">
               <img
-                src="/lovable-uploads/e1dc064f-54dd-47d7-a5b3-e7b48fabccb6.png"
+                src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
                 alt="AD Vivum Logo"
                 className="h-16 w-16 md:h-20 md:w-20 mr-4"
                 style={{ 

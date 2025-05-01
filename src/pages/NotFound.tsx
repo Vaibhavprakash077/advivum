@@ -1,4 +1,3 @@
-
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -21,7 +20,7 @@ const NotFound = () => {
       <div className="container flex flex-col items-center justify-center py-20 min-h-[70vh] text-center">
         <div className="max-w-md mx-auto space-y-6">
           <img
-            src="/lovable-uploads/e1dc064f-54dd-47d7-a5b3-e7b48fabccb6.png"
+            src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
             alt="AD Vivum Logo"
             className="h-16 w-16 object-contain mx-auto mb-4 animate-pulse"
             style={{ 
@@ -69,6 +68,6 @@ const NotFound = () => {
       </div>
     </PageLayout>
   );
-};
+}
 
 export default NotFound;
