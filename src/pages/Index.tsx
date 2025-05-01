@@ -78,9 +78,13 @@ export default function Index() {
           <div className="flex flex-col items-center">
             <div className="text-6xl md:text-8xl mb-4 animate-scale-in flex items-center">
               <img
-                src="/vivum-logo.png"
-                alt="Logo"
+                src="/lovable-uploads/ee63d07c-1c67-4164-9144-ed5a069be38d.png"
+                alt="AD Vivum Logo"
                 className="h-16 w-16 md:h-20 md:w-20 mr-4"
+                style={{ 
+                  filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
+                  background: "transparent"
+                }}
               />
               <span>
                 <span className="text-foreground">AD</span>
