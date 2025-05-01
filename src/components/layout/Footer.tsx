@@ -68,7 +68,7 @@ export default function Footer() {
       <div className="container mt-8 pt-8 border-t text-center text-muted-foreground text-sm">
         <div className="flex justify-center items-center mb-3">
           <img
-            src="/lovable-uploads/ee63d07c-1c67-4164-9144-ed5a069be38d.png"
+            src="/lovable-uploads/e1dc064f-54dd-47d7-a5b3-e7b48fabccb6.png"
             alt="AD Vivum Logo"
             className="h-6 w-6 mr-2 object-contain"
             style={{ 

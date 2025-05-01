@@ -21,7 +21,7 @@ const NotFound = () => {
       <div className="container flex flex-col items-center justify-center py-20 min-h-[70vh] text-center">
         <div className="max-w-md mx-auto space-y-6">
           <img
-            src="/lovable-uploads/ee63d07c-1c67-4164-9144-ed5a069be38d.png"
+            src="/lovable-uploads/e1dc064f-54dd-47d7-a5b3-e7b48fabccb6.png"
             alt="AD Vivum Logo"
             className="h-16 w-16 object-contain mx-auto mb-4 animate-pulse"
             style={{ 
