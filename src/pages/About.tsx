@@ -2,33 +2,24 @@
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
+import { TeamSection } from "@/components/ui/team-section";
 import { Flame, Target, BookOpen, Users } from "lucide-react";
 
-// Sample team members data
+// Team members data
 const teamMembers = [
   {
-    name: "Dr. Jane Smith",
-    title: "Founder & Research Director",
-    bio: "Ph.D. in Data Science with 15+ years of research experience. Passionate about democratizing research methodologies.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+    name: "Dr. Waqar M. Naqvi",
+    title: "Founder Director",
+    description: "Dr. Waqar M. Naqvi is the visionary Founder Director of Advivum Research and Education. A distinguished scholar and educator, he holds multiple doctoral degrees including a PhD and a PhDs in Health Professions Education (HPE). His contributions to academic excellence and healthcare innovation have earned him prestigious honors such as the Fellowship of the Indian Association of Physiotherapists (FIAP) and recognition as an International FAIMER Fellow.<br/><br/>With a strong foundation in healthcare research, Dr. Naqvi has dedicated his career to advancing evidence-based practices, fostering interdisciplinary education, and mentoring future leaders in health sciences. His academic and research work is globally recognized, as reflected in his extensive publications and international collaborations.<br/><br/>Dr. Naqvi brings unparalleled expertise and leadership to Advivum, guiding its mission to bridge the gap between education and applied research in healthcare.",
+    image: "/lovable-uploads/a150f113-1b26-4561-92ca-e3d462963c81.png",
+    orcidId: "0000-0003-4484-8225"
   },
   {
-    name: "Prof. Michael Brown",
-    title: "Head of Publication Services",
-    bio: "Former journal editor with expertise in academic publishing and research communication.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    name: "Dr. Emily Chen",
-    title: "AI Research Lead",
-    bio: "Specialist in AI applications for research synthesis and data analysis.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    name: "David Wilson",
-    title: "Educational Technology Director",
-    bio: "Innovator in educational technology with a focus on interactive learning platforms.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+    name: "Mr. Ujjwal Tiwary",
+    title: "Health EdTech Specialist",
+    description: "Ujjwal Tiwary is a dynamic Health EdTech Specialist at Advivum Research and Education, blending clinical insight with a passion for digital learning and research innovation. With a foundation in physiotherapy from Rajiv Gandhi University of Health Sciences, he brings a multidisciplinary perspective rooted in rehabilitation sciences, health education, and emerging technologies.<br/><br/>Ujjwal's contributions to the field span across academic research, public speaking, and global collaboration. He has presented systematic reviews at international physiotherapy conferences, focusing on areas like sports wearables, robotic rehab, and ophthalmologic physiotherapy. As a published author in PLOS ONE and inventor of a TMJ rehabilitation device, Ujjwal exemplifies scientific rigor and creativity.<br/><br/>He also works with platforms like Physiopedia, IOC, WHO, and FIFA. At Advivum, he leads tech-enabled educational strategies for health professionals.",
+    image: "/lovable-uploads/db8f1834-15e7-4840-a254-4b45fd35f50b.png",
+    orcidId: "0009-0009-5680-5311"
   }
 ];
 
@@ -153,38 +144,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Members */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container">
-          <SectionTitle 
-            title="Our Team" 
-            subtitle="Meet the experts who power AD Vivum's services"
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg animate-fade-in"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="h-64 overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.title}</p>
-                  <p className="text-muted-foreground">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Team Section - Now using the TeamSection component */}
+      <TeamSection members={teamMembers} />
 
       {/* Contact Information */}
       <section className="py-16 px-4 bg-primary/10">
