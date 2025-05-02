@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -158,9 +157,8 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
             <div className="bg-background p-6 rounded-lg shadow-md w-full max-w-xs">
               <h3 className="font-bold text-lg mb-4">Contact Details</h3>
-              <p className="mb-2"><strong>Email:</strong> info@advivum.im</p>
-              <p className="mb-2"><strong>Phone:</strong> +1 (234) 567-890</p>
-              <p><strong>Location:</strong> Boston, MA</p>
+              <p className="mb-2"><strong>Email:</strong> connect@vivum.im</p>
+              <p className="mb-2"><strong>Phone:</strong> +91 9021699000</p>
             </div>
             <div className="bg-background p-6 rounded-lg shadow-md w-full max-w-xs">
               <h3 className="font-bold text-lg mb-4">Office Hours</h3>
