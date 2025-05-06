@@ -18,6 +18,9 @@ interface HeroSectionProps {
   children?: React.ReactNode;
   darkOverlay?: boolean;
   trustBadges?: React.ReactNode;
+  useGradient?: boolean;
+  graphicImage?: string;
+  alignLeft?: boolean;
 }
 
 export function HeroSection({
@@ -33,6 +36,9 @@ export function HeroSection({
   children,
   darkOverlay = false,
   trustBadges,
+  useGradient = false,
+  graphicImage,
+  alignLeft = false,
 }: HeroSectionProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
   
@@ -58,56 +64,91 @@ export function HeroSection({
     <section
       className={cn(
         "relative py-20 md:py-32 overflow-hidden min-h-[90vh] flex items-center",
-        backgroundImage ? "bg-cover bg-center" : "bg-gradient-to-br from-muted/70 via-muted/30 to-background dark:from-background dark:via-background/80 dark:to-background/40",
+        useGradient ? "bg-gradient-to-r from-[#00C4B4] to-[#1A3C34]" : 
+          backgroundImage ? "bg-cover bg-center" : 
+          "bg-gradient-to-br from-muted/70 via-muted/30 to-background dark:from-background dark:via-background/80 dark:to-background/40",
         className
       )}
-      style={backgroundImage ? { 
+      style={backgroundImage && !useGradient ? { 
         backgroundImage: `url(${backgroundImage})`,
         backgroundPositionY: `${scrollPosition * 0.5}px` 
       } : {}}
     >
-      {backgroundImage && darkOverlay && (
+      {backgroundImage && darkOverlay && !useGradient && (
         <div className="absolute inset-0 bg-black/50" />
       )}
-      {!backgroundImage && (
+      {!backgroundImage && !useGradient && (
         <div className="absolute inset-0 bg-grid-white/[0.05] dark:bg-grid-white/[0.02]" />
       )}
       
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/5 to-background opacity-75 animate-pulse-glow" />
+      {/* Gradient overlay for non-gradient backgrounds */}
+      {!useGradient && (
+        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/5 to-background opacity-75 animate-pulse-glow" />
+      )}
       
       <div className="container relative z-10">
-        <div className="flex flex-col items-center text-center">
-          <div className="animate-fade-in max-w-4xl">
+        <div className={cn(
+          "flex flex-col md:flex-row items-center",
+          alignLeft ? "text-left md:justify-between" : "text-center justify-center"
+        )}>
+          <div className={cn(
+            "animate-fade-in max-w-3xl",
+            alignLeft ? "" : "text-center",
+            graphicImage ? "md:w-1/2 mb-10 md:mb-0" : ""
+          )}>
             {subtitle && (
-              <p className="mb-4 text-lg font-medium text-primary uppercase tracking-widest animate-fade-in [animation-delay:200ms]">
+              <p className={cn(
+                "mb-4 text-lg font-medium uppercase tracking-widest animate-fade-in [animation-delay:200ms]",
+                useGradient ? "text-white/80" : "text-primary" 
+              )}>
                 {subtitle}
               </p>
             )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in [animation-delay:400ms]">
+            <h1 className={cn(
+              "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in [animation-delay:400ms]",
+              useGradient ? "text-white" : ""
+            )}>
               {title}
             </h1>
             {description && (
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in [animation-delay:600ms]">
+              <p className={cn(
+                "text-xl max-w-2xl mb-8 animate-fade-in [animation-delay:600ms]",
+                useGradient ? "text-white/90" : "text-muted-foreground",
+                alignLeft ? "" : "mx-auto"
+              )}>
                 {description}
               </p>
             )}
             {(ctaText || ctaSecondaryText) && (
-              <div className="flex flex-wrap gap-4 justify-center mt-8 animate-fade-in [animation-delay:800ms]">
+              <div className={cn(
+                "flex flex-wrap gap-4 mt-8 animate-fade-in [animation-delay:800ms]",
+                alignLeft ? "" : "justify-center"
+              )}>
                 {ctaText && (
                   <Button 
                     asChild 
                     size="lg" 
-                    className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary border-none shadow-lg shadow-primary/20 dark:shadow-primary/10 group relative overflow-hidden"
+                    className={cn(
+                      "shadow-lg group relative overflow-hidden",
+                      useGradient ? 
+                        "bg-[#00C4B4] hover:bg-[#00a89a] text-white border-none shadow-[#00C4B4]/20" : 
+                        "bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary border-none shadow-primary/20 dark:shadow-primary/10"
+                    )}
                   >
                     <Link to={ctaLink || "#"}>
-                      <span className="relative z-10">{ctaText}</span>
-                      <span className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                      <span className="relative z-10 text-base font-medium">{ctaText}</span>
+                      {!useGradient && (
+                        <span className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                      )}
                     </Link>
                   </Button>
                 )}
                 {ctaSecondaryText && (
-                  <Button asChild variant="outline" size="lg" className="backdrop-blur-sm bg-white/10 border-white/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20">
+                  <Button asChild variant="outline" size="lg" className={cn(
+                    useGradient ? 
+                      "backdrop-blur-sm bg-white/10 border-white/20 text-white hover:bg-white/20" : 
+                      "backdrop-blur-sm bg-white/10 border-white/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20"
+                  )}>
                     <Link to={ctaSecondaryLink || "#"}>{ctaSecondaryText}</Link>
                   </Button>
                 )}
@@ -115,11 +156,28 @@ export function HeroSection({
             )}
             
             {trustBadges && (
-              <div className="mt-16 animate-fade-in [animation-delay:1000ms]">
+              <div className={cn(
+                "mt-16 animate-fade-in [animation-delay:1000ms]",
+                alignLeft ? "" : ""
+              )}>
                 {trustBadges}
               </div>
             )}
           </div>
+
+          {/* Graphic Image */}
+          {graphicImage && (
+            <div className="md:w-1/2 flex justify-center md:justify-end animate-fade-in [animation-delay:800ms]">
+              <div className="relative w-full max-w-lg animate-float">
+                <img 
+                  src={graphicImage}
+                  alt="Tech illustration"
+                  className="w-full h-auto drop-shadow-xl"
+                />
+              </div>
+            </div>
+          )}
+
           {children}
         </div>
       </div>

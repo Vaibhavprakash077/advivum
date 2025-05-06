@@ -1,4 +1,3 @@
-
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -73,36 +72,23 @@ const featuredCourses = [
 export default function Index() {
   return (
     <PageLayout>
-      {/* Hero Section with Logo */}
+      {/* Modern n8n-inspired Hero Section */}
       <HeroSection
         title={
-          <div className="flex flex-col items-center">
-            <div className="text-6xl md:text-8xl mb-4 animate-scale-in flex items-center">
-              <img
-                src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
-                alt="AD Vivum Logo"
-                className="h-16 w-16 md:h-20 md:w-20 mr-4"
-                style={{ 
-                  filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
-                  background: "transparent"
-                }}
-              />
-              <span>
-                <span className="text-foreground">AD</span>
-                <span className="text-primary">Vivum</span>
-              </span>
-            </div>
-            <p className="text-xl text-muted-foreground">Mentoring Minds, Shaping Futures</p>
+          <div className="flex flex-col">
+            <span className="text-4xl md:text-6xl font-bold">
+              ADVivum: Mentoring Minds, Shaping Futures
+            </span>
           </div>
         }
-        description="Advivum empowers researchers and learners through mentorship, publication support, innovative AI tools, and expert-led courses."
-        ctaText="Explore Our Services"
+        description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
+        ctaText="Explore Services"
         ctaLink="/services"
         ctaSecondaryText="Learn More"
         ctaSecondaryLink="/about"
-        trustBadges={<TrustBadges badges={defaultBadges} className="mt-8" />}
-        backgroundImage="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
-        darkOverlay={true}
+        useGradient={true}
+        graphicImage="/lovable-uploads/b8e8cd6b-8d56-4537-b6ef-bce9180df554.png"
+        alignLeft={true}
       />
 
       {/* Services Overview */}
