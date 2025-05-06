@@ -1,3 +1,4 @@
+
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -5,38 +6,9 @@ import PageLayout from "@/components/layout/PageLayout";
 import { SectionTitle } from "@/components/ui/section-title";
 import { HeroSection } from "@/components/ui/hero-section";
 import { ServiceCard } from "@/components/ui/service-card";
-import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { CourseCard } from "@/components/ui/course-card";
 import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
 import Logo from "@/components/layout/Logo";
-
-// Sample data for testimonials
-const testimonials = [
-  {
-    quote: "AD Vivum's mentorship program transformed my research approach. Their guidance was invaluable for my doctoral thesis.",
-    author: "Dr. Sarah Johnson",
-    title: "PhD, Molecular Biology",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    quote: "The publication assistance service helped me navigate the complexities of academic publishing with ease.",
-    author: "Prof. Michael Chen",
-    title: "Associate Professor, University of Technology",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    quote: "Vivum.App revolutionized our literature review process. What used to take weeks now takes days.",
-    author: "Dr. Emily Rodriguez",
-    title: "Research Director, Medical Institute",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    quote: "The workshops on AI in research provided practical skills that I immediately implemented in my work.",
-    author: "James Wilson",
-    title: "Research Fellow, Data Science",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
-  }
-];
 
 // Sample featured courses
 const featuredCourses = [
@@ -328,19 +300,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container">
-          <SectionTitle 
-            title="What Our Users Say" 
-            subtitle="Hear from researchers and students who've partnered with us"
-            showLine={true}
-            revealOnScroll={true}
-          />
-          
-          <TestimonialSlider testimonials={testimonials} />
-        </div>
-      </section>
+      {/* NOTE: Testimonial section removed - will be replaced with authentic testimonials later */}
 
       {/* Call to Action */}
       <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-muted/30 to-secondary/5">
