@@ -98,22 +98,22 @@ export function HeroSection({
           )}>
             {subtitle && (
               <p className={cn(
-                "mb-4 text-lg font-medium uppercase tracking-widest animate-fade-in [animation-delay:200ms]",
-                useGradient ? "text-white/80" : "text-primary" 
+                "mb-4 text-lg font-medium uppercase tracking-widest animate-fade-in [animation-delay:200ms] font-heading",
+                useGradient ? "text-white/90" : "text-primary font-semibold" 
               )}>
                 {subtitle}
               </p>
             )}
             <h1 className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in [animation-delay:400ms]",
-              useGradient ? "text-white" : ""
+              "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in [animation-delay:400ms]",
+              useGradient ? "text-white" : "text-foreground"
             )}>
               {title}
             </h1>
             {description && (
               <p className={cn(
-                "text-xl max-w-2xl mb-8 animate-fade-in [animation-delay:600ms]",
-                useGradient ? "text-white/90" : "text-muted-foreground",
+                "font-body text-lg md:text-xl max-w-2xl mb-8 animate-fade-in [animation-delay:600ms]",
+                useGradient ? "text-white" : "text-[#333333] dark:text-white/90",
                 alignLeft ? "" : "mx-auto"
               )}>
                 {description}
@@ -129,14 +129,14 @@ export function HeroSection({
                     asChild 
                     size="lg" 
                     className={cn(
-                      "shadow-lg group relative overflow-hidden",
+                      "shadow-lg group relative overflow-hidden text-[16px] font-medium",
                       useGradient ? 
                         "bg-[#00C4B4] hover:bg-[#00a89a] text-white border-none shadow-[#00C4B4]/20" : 
                         "bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary border-none shadow-primary/20 dark:shadow-primary/10"
                     )}
                   >
                     <Link to={ctaLink || "#"}>
-                      <span className="relative z-10 text-base font-medium">{ctaText}</span>
+                      <span className="relative z-10 font-medium">{ctaText}</span>
                       {!useGradient && (
                         <span className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       )}
@@ -145,9 +145,10 @@ export function HeroSection({
                 )}
                 {ctaSecondaryText && (
                   <Button asChild variant="outline" size="lg" className={cn(
+                    "text-[16px] font-medium",
                     useGradient ? 
                       "backdrop-blur-sm bg-white/10 border-white/20 text-white hover:bg-white/20" : 
-                      "backdrop-blur-sm bg-white/10 border-white/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20"
+                      "backdrop-blur-sm bg-white/10 border-white/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20 text-[#333333] dark:text-white"
                   )}>
                     <Link to={ctaSecondaryLink || "#"}>{ctaSecondaryText}</Link>
                   </Button>
@@ -187,7 +188,7 @@ export function HeroSection({
         onClick={scrollToContent}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-primary/80 hover:text-primary transition-colors"
       >
-        <span className="text-sm mb-2">Scroll Down</span>
+        <span className="text-sm mb-2 font-medium">Scroll Down</span>
         <ChevronDown className="h-6 w-6 animate-bounce" />
       </button>
     </section>
