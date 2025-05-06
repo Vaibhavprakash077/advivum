@@ -87,7 +87,6 @@ export default function Index() {
         ctaSecondaryText="Learn More"
         ctaSecondaryLink="/about"
         useGradient={true}
-        graphicImage="/lovable-uploads/b8e8cd6b-8d56-4537-b6ef-bce9180df554.png"
         alignLeft={true}
       />
 
