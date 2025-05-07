@@ -11,7 +11,7 @@ const teamMembers: TeamMember[] = [
     name: "Dr. Waqar M. Naqvi",
     title: "Founder Director",
     description: "Dr. Waqar M. Naqvi is the visionary Founder Director of Advivum Research and Education. A distinguished scholar and educator, he holds multiple doctoral degrees including a PhD and a PhDs in Health Professions Education (HPE). His contributions to academic excellence and healthcare innovation have earned him prestigious honors such as the Fellowship of the Indian Association of Physiotherapists (FIAP) and recognition as an International FAIMER Fellow.<br/><br/>With a strong foundation in healthcare research, Dr. Naqvi has dedicated his career to advancing evidence-based practices, fostering interdisciplinary education, and mentoring future leaders in health sciences. His academic and research work is globally recognized, as reflected in his extensive publications and international collaborations.<br/><br/>Dr. Naqvi brings unparalleled expertise and leadership to Advivum, guiding its mission to bridge the gap between education and applied research in healthcare.",
-    //image: "/lovable-uploads/waqar_img.jpg",
+    image: "/lovable-uploads/waqar_img.jpg",
     orcidId: "0000-0003-4484-8225",
     category: "leadership",
     quote: "Education without research is like a bird with one wing. We need both to soar."
