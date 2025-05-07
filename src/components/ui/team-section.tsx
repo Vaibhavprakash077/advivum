@@ -30,7 +30,7 @@ export function TeamSection({ members }: TeamSectionProps) {
           {members.map((member, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-in"
+              className="bg-white dark:bg-card rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="flex flex-col md:flex-row">
@@ -41,10 +41,10 @@ export function TeamSection({ members }: TeamSectionProps) {
                   </Avatar>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <h3 className="text-2xl font-bold text-gray-800">{member.name}</h3>
-                  <p className="text-primary font-medium mb-4">{member.title}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{member.name}</h3>
+                  <p className="text-primary font-medium mb-4 dark:text-gray-100">{member.title}</p>
                   <div 
-                    className="text-muted-foreground mb-4 text-sm"
+                    className="text-muted-foreground dark:text-neutral-200 mb-4 text-sm"
                     dangerouslySetInnerHTML={{ __html: member.description }}
                   />
                   {member.orcidId && (
@@ -52,7 +52,7 @@ export function TeamSection({ members }: TeamSectionProps) {
                       href={`https://orcid.org/${member.orcidId}`}
                       target="_blank"
                       rel="noopener noreferrer" 
-                      className="inline-flex items-center text-sm text-primary hover:text-primary/80"
+                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 dark:hover:text-primary/90"
                     >
                       ORCID iD: {member.orcidId}
                       <ExternalLink className="h-3 w-3 ml-1" />

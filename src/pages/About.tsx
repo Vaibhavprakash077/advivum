@@ -1,3 +1,4 @@
+
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -38,7 +39,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-lg mb-8">
+              <p className="text-lg mb-8 dark:text-gray-100">
                 To transform the research landscape by empowering individuals with the knowledge, tools, and support they need to excel in their academic and professional endeavors.
               </p>
               <div className="space-y-4">
@@ -48,7 +49,7 @@ export default function About() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Excellence in Research</h3>
-                    <p className="text-muted-foreground">Promoting rigorous methodologies and innovative approaches.</p>
+                    <p className="text-muted-foreground dark:text-neutral-200">Promoting rigorous methodologies and innovative approaches.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -57,7 +58,7 @@ export default function About() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Knowledge Accessibility</h3>
-                    <p className="text-muted-foreground">Making advanced research techniques accessible to all.</p>
+                    <p className="text-muted-foreground dark:text-neutral-200">Making advanced research techniques accessible to all.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -66,24 +67,24 @@ export default function About() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Community Building</h3>
-                    <p className="text-muted-foreground">Creating networks of researchers, educators, and innovators.</p>
+                    <p className="text-muted-foreground dark:text-neutral-200">Creating networks of researchers, educators, and innovators.</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="animate-slide-in-right">
               <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-              <p className="text-lg mb-6">
+              <p className="text-lg mb-6 dark:text-gray-100">
                 We envision a world where research excellence is attainable for all, where technology enhances rather than complicates the discovery process, and where knowledge flows freely between disciplines and communities.
               </p>
-              <p className="text-lg">
+              <p className="text-lg dark:text-gray-100">
                 AD Vivum stands at the intersection of traditional academic rigor and cutting-edge technology, creating bridges that connect researchers with the tools, knowledge, and networks they need to thrive in an increasingly complex landscape.
               </p>
               <div className="mt-8 p-6 bg-muted/30 rounded-lg border flex items-center">
                 <Flame className="h-12 w-12 text-secondary mr-6" />
                 <div>
                   <h3 className="font-medium text-lg">Our Name</h3>
-                  <p className="text-muted-foreground">"AD Vivum" comes from the Latin phrase meaning "to the living" or "from life," reflecting our commitment to bringing research to life and making it relevant in the real world.</p>
+                  <p className="text-muted-foreground dark:text-neutral-200">&#34;AD Vivum&#34; comes from the Latin phrase meaning &#34;to the living&#34; or &#34;from life,&#34; reflecting our commitment to bringing research to life and making it relevant in the real world.</p>
                 </div>
               </div>
             </div>
@@ -105,7 +106,7 @@ export default function About() {
                 <span className="font-bold">1</span>
               </div>
               <h3 className="text-2xl font-bold mb-3">2018: The Beginning</h3>
-              <p className="text-lg">
+              <p className="text-lg dark:text-gray-100">
                 AD Vivum began as a small research consulting service, helping doctoral students navigate complex research methodologies and publication processes.
               </p>
             </div>
@@ -115,7 +116,7 @@ export default function About() {
                 <span className="font-bold">2</span>
               </div>
               <h3 className="text-2xl font-bold mb-3">2020: Expanding Services</h3>
-              <p className="text-lg">
+              <p className="text-lg dark:text-gray-100">
                 We expanded our offerings to include comprehensive publication assistance and specialized workshops for researchers across disciplines.
               </p>
             </div>
@@ -125,7 +126,7 @@ export default function About() {
                 <span className="font-bold">3</span>
               </div>
               <h3 className="text-2xl font-bold mb-3">2022: Digital Transformation</h3>
-              <p className="text-lg">
+              <p className="text-lg dark:text-gray-100">
                 The development of Vivum.App marked our entry into educational technology, bringing AI-powered tools to researchers worldwide.
               </p>
             </div>
@@ -135,7 +136,7 @@ export default function About() {
                 <span className="font-bold">4</span>
               </div>
               <h3 className="text-2xl font-bold mb-3">2025: Today and Beyond</h3>
-              <p className="text-lg">
+              <p className="text-lg dark:text-gray-100">
                 Now a comprehensive research and education partner, AD Vivum continues to innovate at the intersection of academia, technology, and professional development.
               </p>
             </div>
@@ -150,20 +151,20 @@ export default function About() {
       <section className="py-16 px-4 bg-primary/10">
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto dark:text-gray-100">
             Have questions about our services or want to learn more about how we can help you?
             Reach out to our team.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <div className="bg-background p-6 rounded-lg shadow-md w-full max-w-xs">
+            <div className="bg-background dark:bg-card p-6 rounded-lg shadow-md w-full max-w-xs">
               <h3 className="font-bold text-lg mb-4">Contact Details</h3>
-              <p className="mb-2"><strong>Email:</strong> connect@vivum.im</p>
-              <p className="mb-2"><strong>Phone:</strong> +91 9021699000</p>
+              <p className="mb-2 dark:text-neutral-200"><strong>Email:</strong> connect@vivum.im</p>
+              <p className="mb-2 dark:text-neutral-200"><strong>Phone:</strong> +91 9021699000</p>
             </div>
-            <div className="bg-background p-6 rounded-lg shadow-md w-full max-w-xs">
+            <div className="bg-background dark:bg-card p-6 rounded-lg shadow-md w-full max-w-xs">
               <h3 className="font-bold text-lg mb-4">Office Hours</h3>
-              <p className="mb-2"><strong>Monday-Friday:</strong> 9:00 AM - 6:00 PM EST</p>
-              <p><strong>Weekends:</strong> By appointment only</p>
+              <p className="mb-2 dark:text-neutral-200"><strong>Monday-Friday:</strong> 9:00 AM - 6:00 PM EST</p>
+              <p className="dark:text-neutral-200"><strong>Weekends:</strong> By appointment only</p>
             </div>
           </div>
         </div>
