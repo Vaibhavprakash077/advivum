@@ -1,11 +1,12 @@
+
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
-import { TeamSection } from "@/components/ui/team-section";
+import { TeamSection, TeamMember } from "@/components/ui/team-section";
 import { Flame, Target, BookOpen, Users } from "lucide-react";
 
 // Team members data
-const teamMembers = [
+const teamMembers: TeamMember[] = [
   {
     name: "Dr. Waqar M. Naqvi",
     title: "Founder Director",
