@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -12,14 +11,18 @@ const teamMembers = [
     title: "Founder Director",
     description: "Dr. Waqar M. Naqvi is the visionary Founder Director of Advivum Research and Education. A distinguished scholar and educator, he holds multiple doctoral degrees including a PhD and a PhDs in Health Professions Education (HPE). His contributions to academic excellence and healthcare innovation have earned him prestigious honors such as the Fellowship of the Indian Association of Physiotherapists (FIAP) and recognition as an International FAIMER Fellow.<br/><br/>With a strong foundation in healthcare research, Dr. Naqvi has dedicated his career to advancing evidence-based practices, fostering interdisciplinary education, and mentoring future leaders in health sciences. His academic and research work is globally recognized, as reflected in his extensive publications and international collaborations.<br/><br/>Dr. Naqvi brings unparalleled expertise and leadership to Advivum, guiding its mission to bridge the gap between education and applied research in healthcare.",
     image: "/lovable-uploads/waqar_img.jpg",
-    orcidId: "0000-0003-4484-8225"
+    orcidId: "0000-0003-4484-8225",
+    category: "leadership",
+    quote: "Education without research is like a bird with one wing. We need both to soar."
   },
   {
     name: "Mr. Ujjwal Tiwary",
     title: "Health EdTech Specialist",
     description: "Ujjwal Tiwary is a dynamic Health EdTech Specialist at Advivum Research and Education, blending clinical insight with a passion for digital learning and research innovation. With a foundation in physiotherapy from Rajiv Gandhi University of Health Sciences, he brings a multidisciplinary perspective rooted in rehabilitation sciences, health education, and emerging technologies.<br/><br/>Ujjwal's contributions to the field span across academic research, public speaking, and global collaboration. He has presented systematic reviews at international physiotherapy conferences, focusing on areas like sports wearables, robotic rehab, and ophthalmologic physiotherapy. As a published author in PLOS ONE and inventor of a TMJ rehabilitation device, Ujjwal exemplifies scientific rigor and creativity.<br/><br/>He also works with platforms like Physiopedia, IOC, WHO, and FIFA. At Advivum, he leads tech-enabled educational strategies for health professionals.",
     image: "/lovable-uploads/db8f1834-15e7-4840-a254-4b45fd35f50b.png",
-    orcidId: "0009-0009-5680-5311"
+    orcidId: "0009-0009-5680-5311",
+    category: "education",
+    quote: "Technology is transforming how we learn and practice healthcare - embracing this change is key to future success."
   }
 ];
 
