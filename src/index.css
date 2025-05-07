@@ -117,8 +117,13 @@
   }
   
   /* For paragraphs in dark-themed sections or on colored backgrounds */
-  .bg-muted p, .bg-primary p, .bg-secondary p, 
-  .bg-primary/10 p, .bg-secondary/10 p, .bg-gradient-to-r p, .bg-gradient-to-br p {
+  .bg-muted p, 
+  .bg-primary p, 
+  .bg-secondary p, 
+  .bg-primary\/10 p, 
+  .bg-secondary\/10 p, 
+  .bg-gradient-to-r p, 
+  .bg-gradient-to-br p {
     color: #F5F5F5; /* Light color for text on dark backgrounds */
   }
   
