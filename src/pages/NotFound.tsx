@@ -2,7 +2,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Home, ArrowLeft } from "lucide-react";
+import { Home, ArrowLeft, AlertCircle } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
@@ -20,15 +20,11 @@ const NotFound = () => {
     <PageLayout>
       <div className="container flex flex-col items-center justify-center py-20 min-h-[70vh] text-center">
         <div className="max-w-md mx-auto space-y-6">
-          <img
-            src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
-            alt="AD Vivum Logo"
-            className="h-16 w-16 object-contain mx-auto mb-4 animate-pulse"
-            style={{ 
-              filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
-              background: "transparent"
-            }}
-          />
+          <div className="flex justify-center">
+            <div className="h-20 w-20 rounded-full bg-red-100 flex items-center justify-center">
+              <AlertCircle className="h-10 w-10 text-red-500" />
+            </div>
+          </div>
           <h1 className="text-7xl font-bold text-primary">404</h1>
           <h2 className="text-3xl font-semibold">Page Not Found</h2>
           <p className="text-muted-foreground">
