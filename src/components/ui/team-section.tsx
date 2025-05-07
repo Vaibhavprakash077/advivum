@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -8,14 +7,14 @@ import { Brain, ExternalLink, GraduationCap, Users } from "lucide-react";
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in";
 import { useStaggeredFade } from "@/hooks/use-staggered-fade";
 
-type TeamMember = {
+export type TeamMember = {
   name: string;
   title: string;
   description: string;
   image: string;
   orcidId?: string;
   quote?: string;
-  category?: "research" | "education" | "leadership";
+  category: "research" | "education" | "leadership";
 };
 
 interface TeamSectionProps {
@@ -31,7 +30,7 @@ export function TeamSection({ members }: TeamSectionProps) {
     setIsClient(true);
   }, []);
 
-  const getCategoryIcon = (category?: string) => {
+  const getCategoryIcon = (category: "research" | "education" | "leadership") => {
     switch(category) {
       case "research":
         return <Brain className="h-4 w-4" />;
