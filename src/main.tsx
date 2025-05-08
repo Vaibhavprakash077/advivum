@@ -19,4 +19,8 @@ const applyStoredTheme = () => {
 // Apply theme before rendering
 applyStoredTheme();
 
+// Log routing info for debugging
+console.log('Current pathname:', window.location.pathname);
+console.log('React Router initializing...');
+
 createRoot(document.getElementById("root")!).render(<App />);
