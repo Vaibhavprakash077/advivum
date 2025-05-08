@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -30,12 +29,18 @@ const teamMembers: TeamMember[] = [
 export default function About() {
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <HeroSection
-        title="About AD Vivum"
-        subtitle="Our Story"
-        description="At Advivum, we mentor minds and shape futures by bridging research, technology, and education."
-      />
+      {/* Enhanced Hero Section with improved typography and contrast */}
+      <section className="py-24 px-4 flex items-center justify-center bg-gradient-to-br from-background to-muted/50 dark:from-background dark:to-muted/20">
+        <div className="container max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary/90 to-secondary/90 bg-clip-text text-transparent">
+            About AD Vivum
+          </h1>
+          <div className="w-24 h-1 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
+          <p className="text-xl md:text-2xl font-medium mb-8 leading-relaxed text-foreground/90 dark:text-foreground/90 animate-fade-in [animation-delay:200ms]">
+            At Advivum, we mentor minds and shape futures by bridging research, technology, and education.
+          </p>
+        </div>
+      </section>
 
       {/* Mission and Vision */}
       <section className="py-16 px-4 bg-background">
