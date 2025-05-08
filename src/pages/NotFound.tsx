@@ -2,7 +2,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Home, ArrowLeft, AlertCircle } from "lucide-react";
+import { Home, ArrowLeft, AlertCircle, Globe } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
@@ -39,6 +39,9 @@ const NotFound = () => {
               </div>
               <div className="mt-1">
                 <strong>Code:</strong> NOT_FOUND
+              </div>
+              <div className="mt-1">
+                <strong>Host:</strong> {window.location.host}
               </div>
             </AlertDescription>
           </Alert>
