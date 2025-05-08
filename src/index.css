@@ -14,10 +14,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 201 89% 48%; /* Brighter blue */
+    /* Updated to vibrant teal */
+    --primary: 174 100% 38%; /* #00C4B4 */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 25 95% 53%; /* Vibrant orange */
+    /* Updated to orange */
+    --secondary: 28 91% 59%; /* #F28C38 */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 240 5% 96%;
@@ -31,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 201 89% 48%;
+    --ring: 174 100% 38%;
 
     --radius: 0.5rem;
 
@@ -55,10 +57,12 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 199 89% 60%; /* Brighter, more vibrant blue for dark mode */
+    /* Updated to brighter teal for dark mode */
+    --primary: 174 100% 45%; /* Brighter teal for dark mode */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 25 95% 55%; /* Brighter orange for dark mode */
+    /* Updated to brighter orange for dark mode */
+    --secondary: 28 91% 65%; /* Brighter orange for dark mode */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -76,7 +80,7 @@
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 199 89% 60%;
+    --sidebar-primary: 174 100% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
