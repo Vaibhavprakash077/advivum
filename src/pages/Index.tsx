@@ -1,3 +1,4 @@
+
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -53,6 +54,7 @@ export default function Index() {
             </span>
           </div>
         }
+        subtitle="Empowering Research & Education"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
         ctaText="Explore Services"
         ctaLink="/services"

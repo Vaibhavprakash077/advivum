@@ -160,6 +160,7 @@ export function HeroSection({
               </p>
             )}
             
+            {/* CTA Buttons - Enhanced styling to ensure visibility */}
             {(ctaText || ctaSecondaryText) && (
               <div 
                 className={cn(
