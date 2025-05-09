@@ -166,4 +166,21 @@
   .dark .trust-indicator {
     @apply border-white/10 bg-black/40 backdrop-blur-lg;
   }
+  
+  /* New utility classes for the enhanced hero section */
+  .text-gradient {
+    @apply bg-gradient-to-br from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-br from-primary via-primary/80 to-secondary bg-clip-text text-transparent;
+  }
+  
+  .dark .text-gradient-primary {
+    @apply bg-gradient-to-br from-primary via-primary/90 to-secondary/80;
+  }
+  
+  .hero-glow {
+    @apply after:absolute after:inset-0 after:bg-gradient-to-t after:from-transparent after:to-background/5 after:opacity-30 after:blur-3xl;
+  }
 }
