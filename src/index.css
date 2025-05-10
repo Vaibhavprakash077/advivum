@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -219,6 +218,24 @@
   
   .animate-pulse-glow {
     animation: pulse-glow 5s ease-in-out infinite;
+  }
+
+  /* Fixed fade-in animation to ensure content doesn't disappear */
+  @keyframes fade-in {
+    0% {
+      opacity: 0.5;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+    /* Important to keep the final state */
+    animation-fill-mode: forwards;
   }
 
   /* n8n style specific additions */

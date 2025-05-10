@@ -6,15 +6,21 @@ export function TechWorkflowGraphic() {
   const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
+    // Set isLoaded to true after component mounts
     setIsLoaded(true);
+    
+    // Ensure it stays loaded - this prevents any accidental state reset
+    return () => {
+      setIsLoaded(true);
+    };
   }, []);
 
   return (
     <div className="relative w-full h-full min-h-[400px] flex items-center justify-center">
-      {/* Main Lightning Bolt */}
+      {/* Main Lightning Bolt - Always visible now with conditional classes */}
       <div className={cn(
-        "relative w-40 h-72 transform transition-all duration-700 scale-90 opacity-0",
-        isLoaded && "scale-100 opacity-100"
+        "relative w-40 h-72 transform transition-all duration-700",
+        isLoaded ? "scale-100 opacity-100" : "scale-90 opacity-0"
       )}>
         <div className="absolute inset-0 bg-gradient-to-br from-[#FF5F1F] via-[#FF8748] to-[#FFA978] rounded-md rotate-12 shadow-xl">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDIzVjFNMSAxMmgyMiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==')] opacity-40"></div>
@@ -22,12 +28,12 @@ export function TechWorkflowGraphic() {
         <div className="lightning-glow absolute inset-0 blur-xl bg-[#FF8748]/40 rounded-full transform scale-110"></div>
       </div>
 
-      {/* Workflow Nodes */}
+      {/* Workflow Nodes - Always visible now with conditional classes */}
       <div className="absolute inset-0">
         {/* Node 1 */}
         <div className={cn(
-          "absolute top-1/4 left-1/4 transition-all duration-700 delay-100 opacity-0 transform translate-y-4",
-          isLoaded && "opacity-100 translate-y-0"
+          "absolute top-1/4 left-1/4 transition-all duration-700 delay-100",
+          isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}>
           <div className="flex flex-col items-center">
             <div className="w-14 h-14 rounded-lg bg-[#1E293B]/80 border border-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg mb-2">
@@ -43,8 +49,8 @@ export function TechWorkflowGraphic() {
 
         {/* Node 2 */}
         <div className={cn(
-          "absolute top-1/2 left-1/5 transition-all duration-700 delay-200 opacity-0 transform translate-y-4",
-          isLoaded && "opacity-100 translate-y-0"
+          "absolute top-1/2 left-1/5 transition-all duration-700 delay-200",
+          isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}>
           <div className="flex flex-col items-center">
             <div className="w-14 h-14 rounded-lg bg-[#1E293B]/80 border border-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg mb-2">
@@ -60,8 +66,8 @@ export function TechWorkflowGraphic() {
 
         {/* Node 3 */}
         <div className={cn(
-          "absolute top-2/3 right-1/4 transition-all duration-700 delay-300 opacity-0 transform translate-y-4",
-          isLoaded && "opacity-100 translate-y-0"
+          "absolute top-2/3 right-1/4 transition-all duration-700 delay-300",
+          isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}>
           <div className="flex flex-col items-center">
             <div className="w-14 h-14 rounded-lg bg-[#1E293B]/80 border border-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg mb-2">
@@ -75,7 +81,7 @@ export function TechWorkflowGraphic() {
           </div>
         </div>
 
-        {/* Connection Lines */}
+        {/* Connection Lines - Fixed the mask animation to ensure it's visible */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -84,10 +90,16 @@ export function TechWorkflowGraphic() {
             </linearGradient>
             <mask id="fadeLineMask">
               <rect x="0" y="0" width="100%" height="100%" fill="white" />
-              <rect className={cn(
-                "transition-all duration-[1.5s] ease-in-out",
-                isLoaded ? "x-0 w-full" : "x-full w-0"
-              )} y="0" height="100%" fill="black" />
+              {/* Modified to ensure it remains visible */}
+              <rect 
+                className={cn(
+                  "transition-all duration-[1.5s] ease-in-out",
+                  isLoaded ? "x-0 w-0" : "x-full w-full"
+                )} 
+                y="0" 
+                height="100%" 
+                fill="black" 
+              />
             </mask>
           </defs>
           <path 
@@ -111,7 +123,7 @@ export function TechWorkflowGraphic() {
         </svg>
       </div>
 
-      {/* Animated Particles */}
+      {/* Animated Particles - Made always visible */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {Array.from({ length: 6 }).map((_, i) => (
           <div 

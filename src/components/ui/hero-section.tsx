@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -69,9 +70,19 @@ export function HeroSection({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Trigger animations after mount
+  // Set isLoaded to true after mount and ensure it stays true
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Set a backup timer to ensure isLoaded becomes true
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    
+    return () => {
+      clearTimeout(timer);
+      setIsLoaded(true);
+    };
   }, []);
 
   // Scroll down function
@@ -101,13 +112,13 @@ export function HeroSection({
         
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left column - Text content */}
+            {/* Left column - Text content - Removed initial opacity-0 to ensure visibility */}
             <div className="text-left">
               {subtitle && (
                 <p 
                   className={cn(
-                    "mb-4 text-lg font-medium uppercase tracking-widest text-primary font-heading opacity-0 transform translate-y-4",
-                    isLoaded && "animate-fade-in"
+                    "mb-4 text-lg font-medium uppercase tracking-widest text-primary font-heading",
+                    isLoaded ? "animate-fade-in" : "opacity-70 translate-y-0"
                   )}
                   style={{ animationDelay: `${delays[0]}s` }}
                 >
@@ -117,8 +128,8 @@ export function HeroSection({
               
               <h1 
                 className={cn(
-                  "text-4xl md:text-5xl lg:text-[48px] font-bold leading-tight mb-6 text-white opacity-0 transform translate-y-4",
-                  isLoaded && "animate-fade-in"
+                  "text-4xl md:text-5xl lg:text-[48px] font-bold leading-tight mb-6 text-white",
+                  isLoaded ? "animate-fade-in" : "opacity-90 translate-y-0"
                 )}
                 style={{ animationDelay: `${delays[1]}s` }}
               >
@@ -128,8 +139,8 @@ export function HeroSection({
               {description && (
                 <p 
                   className={cn(
-                    "text-lg md:text-xl text-white/80 max-w-2xl mb-8 opacity-0 transform translate-y-4",
-                    isLoaded && "animate-fade-in"
+                    "text-lg md:text-xl text-white/80 max-w-2xl mb-8",
+                    isLoaded ? "animate-fade-in" : "opacity-80 translate-y-0"
                   )}
                   style={{ animationDelay: `${delays[2]}s` }}
                 >
@@ -137,12 +148,12 @@ export function HeroSection({
                 </p>
               )}
               
-              {/* CTA Buttons */}
+              {/* CTA Buttons - Removed initial opacity-0 */}
               {(ctaText || ctaSecondaryText) && (
                 <div 
                   className={cn(
-                    "flex flex-wrap gap-4 mt-8 opacity-0 transform translate-y-4",
-                    isLoaded && "animate-fade-in"
+                    "flex flex-wrap gap-4 mt-8",
+                    isLoaded ? "animate-fade-in" : "opacity-90 translate-y-0"
                   )}
                   style={{ animationDelay: `${delays[3]}s` }}
                 >
@@ -176,11 +187,11 @@ export function HeroSection({
               )}
             </div>
 
-            {/* Right column - Graphic */}
+            {/* Right column - Graphic - Removed initial opacity-0 */}
             <div 
               className={cn(
-                "relative flex justify-center items-center opacity-0 transform translate-y-4",
-                isLoaded && "animate-fade-in"
+                "relative flex justify-center items-center",
+                isLoaded ? "animate-fade-in" : "opacity-90 translate-y-0"
               )}
               style={{ animationDelay: `${delays[4]}s` }}
             >
@@ -209,12 +220,12 @@ export function HeroSection({
           </div>
         </div>
         
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Removed initial opacity-0 */}
         <button 
           onClick={scrollToContent}
           className={cn(
-            "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 text-primary/80 hover:text-primary transition-all duration-500",
-            isLoaded && "animate-fade-in"
+            "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-primary/80 hover:text-primary transition-all duration-500",
+            isLoaded ? "animate-fade-in" : "opacity-70"
           )}
           style={{ animationDelay: "1.2s" }}
         >
@@ -272,9 +283,9 @@ export function HeroSection({
             {subtitle && (
               <p 
                 className={cn(
-                  "mb-4 text-lg font-medium uppercase tracking-widest font-heading opacity-0 transform translate-y-4",
+                  "mb-4 text-lg font-medium uppercase tracking-widest font-heading",
                   useGradient ? "text-white/90" : "text-primary font-semibold",
-                  isLoaded && "animate-fade-in"
+                  isLoaded ? "animate-fade-in" : "opacity-80"
                 )}
                 style={{ animationDelay: `${delays[0]}s` }}
               >
@@ -284,9 +295,9 @@ export function HeroSection({
             
             <h1 
               className={cn(
-                "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 opacity-0 transform translate-y-4",
+                "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6",
                 useGradient ? "text-white" : "text-foreground",
-                isLoaded && "animate-fade-in"
+                isLoaded ? "animate-fade-in" : "opacity-90"
               )}
               style={{ animationDelay: `${delays[1]}s` }}
             >
@@ -296,10 +307,10 @@ export function HeroSection({
             {description && (
               <p 
                 className={cn(
-                  "font-body text-lg md:text-xl max-w-2xl mb-8 opacity-0 transform translate-y-4",
+                  "font-body text-lg md:text-xl max-w-2xl mb-8",
                   useGradient ? "text-white/90" : "text-[#333333] dark:text-white/90",
                   alignLeft ? "" : "mx-auto",
-                  isLoaded && "animate-fade-in"
+                  isLoaded ? "animate-fade-in" : "opacity-80"
                 )}
                 style={{ animationDelay: `${delays[2]}s` }}
               >
@@ -307,13 +318,13 @@ export function HeroSection({
               </p>
             )}
             
-            {/* CTA Buttons - Enhanced styling to ensure visibility */}
+            {/* CTA Buttons - Enhanced visibility */}
             {(ctaText || ctaSecondaryText) && (
               <div 
                 className={cn(
-                  "flex flex-wrap gap-4 mt-8 opacity-0 transform translate-y-4",
+                  "flex flex-wrap gap-4 mt-8",
                   alignLeft ? "" : "justify-center",
-                  isLoaded && "animate-fade-in"
+                  isLoaded ? "animate-fade-in" : "opacity-90"
                 )}
                 style={{ animationDelay: `${delays[3]}s` }}
               >
@@ -355,8 +366,8 @@ export function HeroSection({
             {trustBadges && (
               <div 
                 className={cn(
-                  "mt-16 opacity-0 transform translate-y-4",
-                  isLoaded && "animate-fade-in"
+                  "mt-16",
+                  isLoaded ? "animate-fade-in" : "opacity-80"
                 )}
                 style={{ animationDelay: "1s" }}
               >
@@ -365,12 +376,12 @@ export function HeroSection({
             )}
           </div>
 
-          {/* Graphic Image */}
+          {/* Graphic Image - Enhanced visibility */}
           {graphicImage && (
             <div 
               className={cn(
-                "md:w-1/2 flex justify-center md:justify-end opacity-0 transform translate-y-4",
-                isLoaded && "animate-fade-in"
+                "md:w-1/2 flex justify-center md:justify-end",
+                isLoaded ? "animate-fade-in" : "opacity-90"
               )}
               style={{ animationDelay: `${delays[4]}s` }}
             >
@@ -392,14 +403,14 @@ export function HeroSection({
         </div>
       </div>
       
-      {/* Scroll indicator */}
+      {/* Scroll indicator - Enhanced visibility */}
       <button 
         onClick={scrollToContent}
         className={cn(
-          "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0",
+          "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center",
           useGradient ? "text-white/80 hover:text-white" : "text-primary/80 hover:text-primary",
           "transition-all duration-500",
-          isLoaded && "animate-fade-in"
+          isLoaded ? "animate-fade-in" : "opacity-80"
         )}
         style={{ animationDelay: "1.2s" }}
       >

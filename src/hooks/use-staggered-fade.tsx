@@ -9,15 +9,19 @@ interface StaggeredFadeConfig {
 
 export function useStaggeredFade({
   baseDelay = 0,
-  delayIncrement = 0.2,
+  delayIncrement = 0.1, // Reduced delay increment for faster animation completion
   totalItems,
 }: StaggeredFadeConfig) {
   const [delays, setDelays] = useState<number[]>([]);
 
   useEffect(() => {
-    const newDelays = Array.from({ length: totalItems }, (_, index) => 
-      baseDelay + (index * delayIncrement)
-    );
+    // Generate delays but cap the maximum delay to avoid too long animations
+    const maxDelay = 0.8; // Cap maximum delay to avoid content disappearing
+    const newDelays = Array.from({ length: totalItems }, (_, index) => {
+      const calculatedDelay = baseDelay + (index * delayIncrement);
+      return Math.min(calculatedDelay, maxDelay);
+    });
+    
     setDelays(newDelays);
   }, [baseDelay, delayIncrement, totalItems]);
 
