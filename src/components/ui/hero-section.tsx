@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -25,6 +24,8 @@ interface HeroSectionProps {
   graphicImage?: string;
   alignLeft?: boolean;
   useParticles?: boolean;
+  n8nStyle?: boolean;
+  graphicComponent?: React.ReactNode;
 }
 
 export function HeroSection({
@@ -44,6 +45,8 @@ export function HeroSection({
   graphicImage,
   alignLeft = false,
   useParticles = true,
+  n8nStyle = false,
+  graphicComponent,
 }: HeroSectionProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -79,6 +82,150 @@ export function HeroSection({
     });
   };
 
+  // n8n style hero section
+  if (n8nStyle) {
+    return (
+      <section
+        className={cn(
+          "relative py-20 md:py-32 overflow-hidden min-h-[90vh] flex items-center bg-gradient-to-br from-[#0A192F] via-[#0F2942] to-[#173248]",
+          className
+        )}
+      >
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-grid-white/[0.03] opacity-60"></div>
+        <div className="absolute inset-0 noise-bg"></div>
+        
+        {/* Gradient overlays */}
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent opacity-30 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-secondary/20 via-secondary/10 to-transparent opacity-30 blur-3xl rounded-full translate-x-1/2 translate-y-1/2"></div>
+        
+        <div className="container relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left column - Text content */}
+            <div className="text-left">
+              {subtitle && (
+                <p 
+                  className={cn(
+                    "mb-4 text-lg font-medium uppercase tracking-widest text-primary font-heading opacity-0 transform translate-y-4",
+                    isLoaded && "animate-fade-in"
+                  )}
+                  style={{ animationDelay: `${delays[0]}s` }}
+                >
+                  {subtitle}
+                </p>
+              )}
+              
+              <h1 
+                className={cn(
+                  "text-4xl md:text-5xl lg:text-[48px] font-bold leading-tight mb-6 text-white opacity-0 transform translate-y-4",
+                  isLoaded && "animate-fade-in"
+                )}
+                style={{ animationDelay: `${delays[1]}s` }}
+              >
+                {title}
+              </h1>
+              
+              {description && (
+                <p 
+                  className={cn(
+                    "text-lg md:text-xl text-white/80 max-w-2xl mb-8 opacity-0 transform translate-y-4",
+                    isLoaded && "animate-fade-in"
+                  )}
+                  style={{ animationDelay: `${delays[2]}s` }}
+                >
+                  {description}
+                </p>
+              )}
+              
+              {/* CTA Buttons */}
+              {(ctaText || ctaSecondaryText) && (
+                <div 
+                  className={cn(
+                    "flex flex-wrap gap-4 mt-8 opacity-0 transform translate-y-4",
+                    isLoaded && "animate-fade-in"
+                  )}
+                  style={{ animationDelay: `${delays[3]}s` }}
+                >
+                  {ctaText && (
+                    <Button 
+                      asChild 
+                      size="lg" 
+                      className={cn(
+                        "relative overflow-hidden bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg text-white font-medium text-[16px] transition-all duration-300 transform hover:scale-[1.03]",
+                      )}
+                    >
+                      <Link to={ctaLink || "#"}>
+                        <span className="relative z-10 font-medium">{ctaText}</span>
+                      </Link>
+                    </Button>
+                  )}
+                  
+                  {ctaSecondaryText && (
+                    <Button 
+                      asChild 
+                      variant="outline" 
+                      size="lg" 
+                      className={cn(
+                        "text-[16px] font-medium border-primary/40 text-white hover:bg-primary/10 transition-all duration-300 transform hover:scale-[1.03]",
+                      )}
+                    >
+                      <Link to={ctaSecondaryLink || "#"}>{ctaSecondaryText}</Link>
+                    </Button>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Right column - Graphic */}
+            <div 
+              className={cn(
+                "relative flex justify-center items-center opacity-0 transform translate-y-4",
+                isLoaded && "animate-fade-in"
+              )}
+              style={{ animationDelay: `${delays[4]}s` }}
+            >
+              {graphicComponent ? (
+                graphicComponent
+              ) : graphicImage ? (
+                <div className="relative w-full max-w-lg animate-float">
+                  <img 
+                    src={graphicImage}
+                    alt="Tech illustration"
+                    className="w-full h-auto drop-shadow-xl"
+                  />
+                  {/* Decorative glowing elements */}
+                  <div className="absolute -z-10 -left-4 -top-4 w-72 h-72 bg-primary/30 rounded-full filter blur-3xl opacity-70 animate-pulse-glow"></div>
+                  <div className="absolute -z-10 -right-4 -bottom-4 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl opacity-70 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
+                </div>
+              ) : (
+                <div className="n8n-lightning-graphic">
+                  <div className="lightning-container">
+                    <div className="lightning"></div>
+                    <div className="glow"></div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <button 
+          onClick={scrollToContent}
+          className={cn(
+            "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 text-primary/80 hover:text-primary transition-all duration-500",
+            isLoaded && "animate-fade-in"
+          )}
+          style={{ animationDelay: "1.2s" }}
+        >
+          <span className="text-sm mb-2 font-medium">Scroll Down</span>
+          <ChevronDown className="h-6 w-6 animate-bounce" />
+        </button>
+      </section>
+    );
+  }
+
+  // Original hero section (keeping all existing functionality intact)
   return (
     <section
       className={cn(

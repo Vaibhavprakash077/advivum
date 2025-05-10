@@ -1,4 +1,3 @@
-
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import { ServiceCard } from "@/components/ui/service-card";
 import { CourseCard } from "@/components/ui/course-card";
 import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in";
+import { TechWorkflowGraphic } from "@/components/ui/tech-workflow-graphic";
 import Logo from "@/components/layout/Logo";
 
 // Sample featured courses
@@ -45,14 +45,12 @@ const featuredCourses = [
 export default function Index() {
   return (
     <PageLayout>
-      {/* Enhanced Hero Section */}
+      {/* N8N Style Hero Section */}
       <HeroSection
         title={
-          <div className="flex flex-col">
-            <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] to-[#1A3C34]">
-              ADVivum: Mentoring Minds, Shaping Futures
-            </span>
-          </div>
+          <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] to-white">
+            ADVivum: Mentoring Minds, Shaping Futures
+          </span>
         }
         subtitle="Empowering Research & Education"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
@@ -60,9 +58,8 @@ export default function Index() {
         ctaLink="/services"
         ctaSecondaryText="Learn More"
         ctaSecondaryLink="/about"
-        useParticles={true}
-        graphicImage="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop"
-        alignLeft={true}
+        n8nStyle={true}
+        graphicComponent={<TechWorkflowGraphic />}
       />
 
       {/* Services Overview */}
