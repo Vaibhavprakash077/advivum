@@ -19,8 +19,9 @@ const applyStoredTheme = () => {
 // Apply theme before rendering
 applyStoredTheme();
 
-// Log routing info for debugging
+// Force a new build on Vercel - Update timestamp
 console.log('Current pathname:', window.location.pathname);
 console.log('React Router initializing...');
+console.log('Build timestamp:', new Date().toISOString());
 
 createRoot(document.getElementById("root")!).render(<App />);
