@@ -88,7 +88,7 @@ export function TeamSection({ members }: TeamSectionProps) {
                         </div>
                         <p className="text-primary font-medium mb-4 dark:text-gray-100">{member.title}</p>
                         <div 
-                          className="text-white dark:text-neutral-200 mb-6 text-sm leading-relaxed"
+                          className="text-gray-800 dark:text-neutral-200 mb-6 text-sm leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: member.description }}
                         />
                       </div>
