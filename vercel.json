@@ -1,6 +1,7 @@
 {
+  "version": 2,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [
     {
@@ -10,11 +11,10 @@
         { "key": "Pragma", "value": "no-cache" },
         { "key": "Expires", "value": "0" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Build-Id", "value": "build-${Date.now()}-${Math.random().toString(36).substring(2, 15)}" }
+        { "key": "X-Build-Id", "value": "manual-build-id-002" }
       ]
     }
   ],
-  "version": 2,
   "buildCommand": "npm run build -- --mode production",
   "cleanUrls": true
 }
