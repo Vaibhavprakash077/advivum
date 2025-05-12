@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -80,7 +79,8 @@ export default function About() {
             About AD Vivum
           </h1>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-          <p className="text-xl md:text-2xl font-medium mb-8 leading-relaxed text-foreground/90 dark:text-foreground/90 animate-fade-in [animation-delay:200ms]">
+          {/* Subtitle with updated className for better visibility in light mode */}
+          <p className="text-gray-700 dark:text-muted-foreground text-center max-w-3xl mx-auto mt-4">
             At Advivum, we mentor minds and shape futures by bridging research, technology, and education.
           </p>
         </div>
@@ -161,28 +161,26 @@ export default function About() {
           />
           
           <div className="relative border-l-4 border-primary/20 ml-4 pl-8 py-4 space-y-12">
-            {[
-              {
-                year: "2018",
-                title: "The Beginning",
-                description: "AD Vivum began as a small research consulting service, helping doctoral students navigate complex research methodologies and publication processes."
-              },
-              {
-                year: "2020",
-                title: "Expanding Services",
-                description: "We expanded our offerings to include comprehensive publication assistance and specialized workshops for researchers across disciplines."
-              },
-              {
-                year: "2022",
-                title: "Digital Transformation",
-                description: "The development of Vivum.App marked our entry into educational technology, bringing AI-powered tools to researchers worldwide."
-              },
-              {
-                year: "2025",
-                title: "Today and Beyond",
-                description: "Now a comprehensive research and education partner, AD Vivum continues to innovate at the intersection of academia, technology, and professional development."
-              }
-            ].map((item, index) => (
+            {[{
+              year: "2018",
+              title: "The Beginning",
+              description: "AD Vivum began as a small research consulting service, helping doctoral students navigate complex research methodologies and publication processes."
+            },
+            {
+              year: "2020",
+              title: "Expanding Services",
+              description: "We expanded our offerings to include comprehensive publication assistance and specialized workshops for researchers across disciplines."
+            },
+            {
+              year: "2022",
+              title: "Digital Transformation",
+              description: "The development of Vivum.App marked our entry into educational technology, bringing AI-powered tools to researchers worldwide."
+            },
+            {
+              year: "2025",
+              title: "Today and Beyond",
+              description: "Now a comprehensive research and education partner, AD Vivum continues to innovate at the intersection of academia, technology, and professional development."
+            }].map((item, index) => (
               <ScrollFadeIn 
                 key={index}
                 delay={timelineDelays[index]}
