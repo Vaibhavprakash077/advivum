@@ -72,21 +72,20 @@ export default function About() {
 
   return (
     <PageLayout>
-      {/* Enhanced Hero Section with improved typography and contrast */}
+      {/* Hero Section */}
       <section className="py-24 px-4 flex items-center justify-center bg-gradient-to-br from-background to-muted/50 dark:from-background dark:to-muted/20">
         <div className="container max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             About AD Vivum
           </h1>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-          {/* Subtitle with updated className for better visibility in light mode */}
           <p className="text-gray-700 dark:text-muted-foreground text-center max-w-3xl mx-auto mt-4">
             At Advivum, we mentor minds and shape futures by bridging research, technology, and education.
           </p>
         </div>
       </section>
 
-      {/* Mission and Vision with enhanced hover effects and animations */}
+      {/* Mission and Vision */}
       <section className="py-16 px-4 bg-background">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -151,7 +150,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Company Background with enhanced timeline */}
+      {/* Company Background */}
       <section className="py-16 px-4 bg-gradient-to-br from-muted/40 to-muted/10 dark:from-muted/10 dark:to-background">
         <div className="container">
           <SectionTitle 
@@ -206,7 +205,7 @@ export default function About() {
       {/* Team Section */}
       <TeamSection members={teamMembers} />
 
-      {/* Contact Information with hover effects */}
+      {/* Contact Information */}
       <section className="py-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10">
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Get in Touch</h2>
