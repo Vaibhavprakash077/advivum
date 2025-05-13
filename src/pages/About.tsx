@@ -79,10 +79,9 @@ export default function About() {
             About AD Vivum
           </h1>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-          <p className="text-foreground dark:text-muted-foreground text-center max-w-3xl mx-auto mt-4 text-lg font-medium">
+          <p className="text-black dark:text-muted-foreground text-center max-w-3xl mx-auto mt-4 text-lg font-medium">
   At Advivum, we mentor minds and shape futures by bridging research, technology, and education.
 </p>
-
         </div>
       </section>
 
