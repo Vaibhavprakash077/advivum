@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -52,8 +53,8 @@ export function HeroSection({
 
   const elementCount = 5;
   const delays = useStaggeredFade({
-    baseDelay: 0.2,
-    delayIncrement: 0.2,
+    baseDelay: 0.1,
+    delayIncrement: 0.15,
     totalItems: elementCount,
   });
 
@@ -67,14 +68,10 @@ export function HeroSection({
   }, []);
 
   useEffect(() => {
-    setIsLoaded(true);
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 100);
-    return () => {
-      clearTimeout(timer);
-      setIsLoaded(true);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToContent = () => {
@@ -87,12 +84,12 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        "relative py-20 md:py-32 overflow-hidden min-h-[100vh] flex items-center",
+        "relative py-20 md:py-28 overflow-hidden min-h-[100vh] flex items-center",
         useGradient
           ? "bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60"
           : backgroundImage
           ? "bg-cover bg-center"
-          : "bg-gradient-to-br from-muted/70 via-muted/30 to-background dark:from-background dark:via-background/80 dark:to-background/40",
+          : "bg-gradient-to-br from-muted/70 via-background/95 to-background/90 dark:from-background dark:via-background/90 dark:to-background/80",
         className
       )}
       style={
@@ -104,15 +101,22 @@ export function HeroSection({
           : {}
       }
     >
+      {/* Enhanced Particle Background with more density and interactivity */}
       {useParticles && !backgroundImage && (
         <ParticlesBackground
           particleColor={
             useGradient
-              ? "rgba(255, 255, 255, 0.2)"
-              : "rgba(0, 196, 180, 0.3)"
+              ? "rgba(255, 255, 255, 0.3)"
+              : "rgba(0, 196, 180, 0.4)"
           }
+          particleCount={60}
+          particleSpeed={0.8}
+          className="opacity-70"
         />
       )}
+
+      {/* Animated gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background/40 dark:to-background/60 opacity-80 animate-pulse-glow" />
 
       {backgroundImage && darkOverlay && !useGradient && (
         <div className="absolute inset-0 bg-black/50" />
@@ -122,7 +126,9 @@ export function HeroSection({
         <div className="absolute inset-0 bg-grid-white/[0.05] dark:bg-grid-white/[0.02]" />
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/5 to-background opacity-40" />
+      {/* Additional animated decorative elements */}
+      <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-primary/10 rounded-full filter blur-3xl opacity-30 animate-pulse-glow" style={{ animationDelay: "1s" }} />
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-secondary/10 rounded-full filter blur-3xl opacity-30 animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
       <div className="container relative z-10">
         <div
@@ -135,7 +141,7 @@ export function HeroSection({
             className={cn(
               "max-w-3xl",
               alignLeft ? "" : "text-center",
-              graphicImage ? "md:w-1/2 mb-10 md:mb-0" : ""
+              graphicImage || graphicComponent ? "md:w-1/2 mb-10 md:mb-0" : ""
             )}
           >
             {subtitle && (
@@ -145,7 +151,7 @@ export function HeroSection({
                   useGradient
                     ? "text-white/90"
                     : "text-primary font-semibold",
-                  isLoaded ? "animate-fade-in" : "opacity-80"
+                  isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
                 style={{ animationDelay: `${delays[0]}s` }}
               >
@@ -155,24 +161,26 @@ export function HeroSection({
 
             <h1
               className={cn(
-                "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6",
+                "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10",
                 useGradient ? "text-white" : "text-foreground",
-                isLoaded ? "animate-fade-in" : "opacity-90"
+                isLoaded ? "animate-fade-in" : "opacity-0"
               )}
               style={{ animationDelay: `${delays[1]}s` }}
             >
               {title}
+              {/* Enhanced gradient glow effect behind title */}
+              <span className="absolute -z-10 inset-0 blur-xl opacity-20 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse-glow"></span>
             </h1>
 
             {description && (
               <p
                 className={cn(
-                  "font-body text-lg md:text-xl max-w-2xl mb-8",
+                  "font-body text-lg md:text-xl max-w-2xl mb-8 leading-relaxed",
                   useGradient
                     ? "text-white/90"
-                    : "text-[#333333] dark:text-white/90", // ← ORIGINAL STYLE
+                    : "text-muted-foreground dark:text-white/80",
                   alignLeft ? "" : "mx-auto",
-                  isLoaded ? "animate-fade-in" : "opacity-80"
+                  isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
                 style={{ animationDelay: `${delays[2]}s` }}
               >
@@ -185,7 +193,7 @@ export function HeroSection({
                 className={cn(
                   "flex flex-wrap gap-4 mt-8",
                   alignLeft ? "" : "justify-center",
-                  isLoaded ? "animate-fade-in" : "opacity-90"
+                  isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
                 style={{ animationDelay: `${delays[3]}s` }}
               >
@@ -194,7 +202,7 @@ export function HeroSection({
                     asChild
                     size="lg"
                     className={cn(
-                      "shadow-lg group relative overflow-hidden text-[16px] font-medium transition-all duration-300 transform hover:scale-105",
+                      "shadow-lg group relative overflow-hidden text-[16px] font-medium transition-all duration-300 transform hover:scale-105 rounded-lg",
                       useGradient
                         ? "bg-white text-primary hover:bg-white/90 border-none"
                         : "glass-effect backdrop-blur-md bg-primary/90 hover:bg-primary text-white border-primary/30"
@@ -202,6 +210,8 @@ export function HeroSection({
                   >
                     <Link to={ctaLink || "#"}>
                       <span className="relative z-10 font-medium">{ctaText}</span>
+                      {/* Add subtle animated gradient on hover */}
+                      <span className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </Link>
                   </Button>
                 )}
@@ -212,7 +222,7 @@ export function HeroSection({
                     variant="outline"
                     size="lg"
                     className={cn(
-                      "text-[16px] font-medium transition-all duration-300 transform hover:scale-105",
+                      "text-[16px] font-medium transition-all duration-300 transform hover:scale-105 rounded-lg",
                       useGradient
                         ? "glass-effect backdrop-blur-md bg-white/10 border-white/20 text-white hover:bg-white/20"
                         : "glass-effect backdrop-blur-md bg-white/10 border-primary/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20 text-primary dark:text-white"
@@ -228,7 +238,10 @@ export function HeroSection({
 
             {trustBadges && (
               <div
-                className={cn("mt-16", isLoaded ? "animate-fade-in" : "opacity-80")}
+                className={cn(
+                  "mt-16", 
+                  isLoaded ? "animate-fade-in" : "opacity-0"
+                )}
                 style={{ animationDelay: "1s" }}
               >
                 {trustBadges}
@@ -240,7 +253,7 @@ export function HeroSection({
             <div
               className={cn(
                 "md:w-1/2 flex justify-center md:justify-end",
-                isLoaded ? "animate-fade-in" : "opacity-90"
+                isLoaded ? "animate-fade-in" : "opacity-0"
               )}
               style={{ animationDelay: `${delays[4]}s` }}
             >
@@ -248,14 +261,27 @@ export function HeroSection({
                 <img
                   src={graphicImage}
                   alt="Tech illustration"
-                  className="w-full h-auto drop-shadow-xl"
+                  className="w-full h-auto drop-shadow-xl relative z-10"
                 />
+                {/* Enhanced glow effects */}
                 <div className="absolute -z-10 -left-4 -top-4 w-72 h-72 bg-primary/30 rounded-full filter blur-3xl opacity-70 animate-pulse-glow"></div>
                 <div
                   className="absolute -z-10 -right-4 -bottom-4 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl opacity-70 animate-pulse-glow"
                   style={{ animationDelay: "1s" }}
                 ></div>
               </div>
+            </div>
+          )}
+
+          {graphicComponent && (
+            <div
+              className={cn(
+                "md:w-1/2 flex justify-center md:justify-end",
+                isLoaded ? "animate-fade-in" : "opacity-0"
+              )}
+              style={{ animationDelay: `${delays[4]}s` }}
+            >
+              {graphicComponent}
             </div>
           )}
 
@@ -270,13 +296,13 @@ export function HeroSection({
           useGradient
             ? "text-white/80 hover:text-white"
             : "text-primary/80 hover:text-primary",
-          "transition-all duration-500",
-          isLoaded ? "animate-fade-in" : "opacity-80"
+          "transition-all duration-500 group",
+          isLoaded ? "animate-fade-in" : "opacity-0"
         )}
         style={{ animationDelay: "1.2s" }}
       >
         <span className="text-sm mb-2 font-medium">Scroll Down</span>
-        <ChevronDown className="h-6 w-6 animate-bounce" />
+        <ChevronDown className="h-6 w-6 animate-bounce group-hover:text-primary transition-colors" />
       </button>
     </section>
   );

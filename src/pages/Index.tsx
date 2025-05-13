@@ -1,3 +1,4 @@
+
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -45,10 +46,10 @@ const featuredCourses = [
 export default function Index() {
   return (
     <PageLayout>
-      {/* N8N Style Hero Section */}
+      {/* Enhanced Hero Section */}
       <HeroSection
         title={
-          <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] to-white">
+          <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80">
             ADVivum: Mentoring Minds, Shaping Futures
           </span>
         }
