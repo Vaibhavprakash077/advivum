@@ -73,17 +73,18 @@ export default function About() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-24 px-4 flex items-center justify-center bg-gradient-to-br from-background to-muted/50 dark:from-background dark:to-muted/20">
-        <div className="container max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            About AD Vivum
-          </h1>
-          <div className="w-24 h-1 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-          <p className="text-black dark:text-muted-foreground text-center max-w-3xl mx-auto mt-4 text-lg font-medium">
-  At Advivum, we mentor minds and shape futures by bridging research, technology, and education.
-</p>
-        </div>
-      </section>
+     <section className="py-24 px-4 flex items-center justify-center bg-gradient-to-br from-background to-muted/50 dark:from-background dark:to-muted/20">
+  <div className="container max-w-4xl mx-auto text-center">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      About AD Vivum
+    </h1>
+    <div className="w-24 h-1 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
+    <p className="text-gray-700 dark:text-muted-foreground text-center max-w-3xl mx-auto mt-4 text-lg font-medium">
+      At Advivum, we mentor minds and shape futures by bridging research, technology, and education.
+    </p>
+  </div>
+</section>
+
 
       {/* Mission and Vision */}
       <section className="py-16 px-4 bg-background">
