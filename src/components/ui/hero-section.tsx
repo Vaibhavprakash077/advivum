@@ -26,6 +26,7 @@ interface HeroSectionProps {
   useParticles?: boolean;
   n8nStyle?: boolean;
   graphicComponent?: React.ReactNode;
+  darkBackground?: boolean;
 }
 
 export function HeroSection({
@@ -47,6 +48,7 @@ export function HeroSection({
   useParticles = true,
   n8nStyle = false,
   graphicComponent,
+  darkBackground = false,
 }: HeroSectionProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -85,11 +87,13 @@ export function HeroSection({
     <section
       className={cn(
         "relative py-20 md:py-28 overflow-hidden min-h-[100vh] flex items-center",
-        useGradient
-          ? "bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60"
-          : backgroundImage
-          ? "bg-cover bg-center"
-          : "bg-gradient-to-br from-muted/70 via-background/95 to-background/90 dark:from-background dark:via-background/90 dark:to-background/80",
+        darkBackground 
+          ? "bg-[#1A1F2C]" // Dark background color
+          : useGradient
+            ? "bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60"
+            : backgroundImage
+              ? "bg-cover bg-center"
+              : "bg-gradient-to-br from-muted/70 via-background/95 to-background/90 dark:from-background dark:via-background/90 dark:to-background/80",
         className
       )}
       style={
@@ -102,10 +106,10 @@ export function HeroSection({
       }
     >
       {/* Enhanced Particle Background with more density and interactivity */}
-      {useParticles && !backgroundImage && (
+      {useParticles && (
         <ParticlesBackground
           particleColor={
-            useGradient
+            darkBackground || useGradient
               ? "rgba(255, 255, 255, 0.3)"
               : "rgba(0, 196, 180, 0.4)"
           }
@@ -122,7 +126,7 @@ export function HeroSection({
         <div className="absolute inset-0 bg-black/50" />
       )}
 
-      {!backgroundImage && !useGradient && (
+      {!backgroundImage && !useGradient && !darkBackground && (
         <div className="absolute inset-0 bg-grid-white/[0.05] dark:bg-grid-white/[0.02]" />
       )}
 
@@ -148,7 +152,7 @@ export function HeroSection({
               <p
                 className={cn(
                   "mb-4 text-lg font-medium uppercase tracking-widest font-heading",
-                  useGradient
+                  useGradient || darkBackground
                     ? "text-white/90"
                     : "text-primary font-semibold",
                   isLoaded ? "animate-fade-in" : "opacity-0"
@@ -162,7 +166,7 @@ export function HeroSection({
             <h1
               className={cn(
                 "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10",
-                useGradient ? "text-white" : "text-foreground",
+                useGradient || darkBackground ? "text-white" : "text-foreground",
                 isLoaded ? "animate-fade-in" : "opacity-0"
               )}
               style={{ animationDelay: `${delays[1]}s` }}
@@ -176,7 +180,7 @@ export function HeroSection({
               <p
                 className={cn(
                   "font-body text-lg md:text-xl max-w-2xl mb-8 leading-relaxed",
-                  useGradient
+                  useGradient || darkBackground
                     ? "text-white/90"
                     : "text-muted-foreground dark:text-white/80",
                   alignLeft ? "" : "mx-auto",
@@ -293,7 +297,7 @@ export function HeroSection({
         onClick={scrollToContent}
         className={cn(
           "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center",
-          useGradient
+          useGradient || darkBackground
             ? "text-white/80 hover:text-white"
             : "text-primary/80 hover:text-primary",
           "transition-all duration-500 group",

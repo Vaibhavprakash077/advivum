@@ -55,27 +55,27 @@ export function ParticlesBackground({
       // Reset the flag after some time
       setTimeout(() => {
         isMouseMovingRef.current = false;
-      }, 150); // Extended duration for smoother effect
+      }, 180); // Extended duration for smoother effect
     };
 
-    // Initialize particles with more variation
+    // Initialize particles with more variation for dark theme
     const initParticles = () => {
       particlesRef.current = [];
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 5 + 1, // Larger size variation
-          speedX: (Math.random() - 0.5) * particleSpeed * (Math.random() + 0.5), // More speed variation
+          size: Math.random() * 5 + 1.5, // Slightly larger size for dark background
+          speedX: (Math.random() - 0.5) * particleSpeed * (Math.random() + 0.5), 
           speedY: (Math.random() - 0.5) * particleSpeed * (Math.random() + 0.5),
           color: particleColor,
-          alpha: Math.random() * 0.6 + 0.2, // Enhanced transparency variation
+          alpha: Math.random() * 0.7 + 0.3, // Higher base alpha for more visibility on dark background
           alphaDirection: Math.random() > 0.5 ? 1 : -1
         });
       }
     };
 
-    // Draw particles with enhanced effects
+    // Draw particles with enhanced effects for dark theme
     const drawParticles = (timestamp: number) => {
       const deltaTime = timestamp - lastTime;
       lastTime = timestamp;
@@ -84,10 +84,10 @@ export function ParticlesBackground({
       
       particlesRef.current.forEach((particle, index) => {
         // Pulse alpha with improved animation
-        particle.alpha += 0.003 * particle.alphaDirection * (Math.sin(timestamp / 2000) * 0.5 + 0.5);
-        if (particle.alpha > 0.9) {
+        particle.alpha += 0.004 * particle.alphaDirection * (Math.sin(timestamp / 1800) * 0.6 + 0.4);
+        if (particle.alpha > 0.95) {
           particle.alphaDirection = -1;
-        } else if (particle.alpha < 0.2) {
+        } else if (particle.alpha < 0.3) {
           particle.alphaDirection = 1;
         }
         
@@ -108,24 +108,24 @@ export function ParticlesBackground({
           const dy = mousePositionRef.current.y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 150) { // Increased interaction range
+          if (distance < 180) { // Increased interaction range for dark theme
             const angle = Math.atan2(dy, dx);
-            const force = (150 - distance) / 150;
+            const force = (180 - distance) / 180;
             
-            particle.speedX -= Math.cos(angle) * force * 0.05; // Increased repulsion force
-            particle.speedY -= Math.sin(angle) * force * 0.05;
+            particle.speedX -= Math.cos(angle) * force * 0.06; // Increased repulsion force
+            particle.speedY -= Math.sin(angle) * force * 0.06;
           }
         }
         
         // Bounce off edges with enhanced randomization
         if (particle.x < 0 || particle.x > canvas.width) {
           particle.speedX *= -1;
-          particle.speedX *= 0.9 + Math.random() * 0.3; // More variation on bounce
+          particle.speedX *= 0.85 + Math.random() * 0.3; // More variation on bounce
         }
         
         if (particle.y < 0 || particle.y > canvas.height) {
           particle.speedY *= -1;
-          particle.speedY *= 0.9 + Math.random() * 0.3;
+          particle.speedY *= 0.85 + Math.random() * 0.3;
         }
         
         // Connect nearby particles with improved line effect
@@ -135,12 +135,12 @@ export function ParticlesBackground({
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 200) { // Extended connection range
+          if (distance < 220) { // Extended connection range for dark theme
             ctx.beginPath();
             // Gradient line effect based on distance
-            const alpha = 0.15 * (1 - distance / 200); // Higher base opacity
+            const alpha = 0.2 * (1 - distance / 220); // Higher base opacity for dark background
             ctx.strokeStyle = particle.color.replace(/[\d\.]+\)$/g, `${alpha})`);
-            ctx.lineWidth = 0.8; // Thicker lines
+            ctx.lineWidth = 0.9; // Thicker lines for dark background
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             ctx.stroke();

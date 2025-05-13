@@ -46,7 +46,7 @@ const featuredCourses = [
 export default function Index() {
   return (
     <PageLayout>
-      {/* Enhanced Hero Section */}
+      {/* Enhanced Hero Section with Dark Background */}
       <HeroSection
         title={
           <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80">
@@ -60,6 +60,7 @@ export default function Index() {
         ctaSecondaryText="Learn More"
         ctaSecondaryLink="/about"
         n8nStyle={true}
+        darkBackground={true}
         graphicComponent={<TechWorkflowGraphic />}
       />
 
