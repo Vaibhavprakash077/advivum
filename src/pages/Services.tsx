@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -18,6 +17,8 @@ import {
   Globe,
   Sparkles
 } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
+import { Clock } from "lucide-react";
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState("mentorship");
@@ -210,28 +211,6 @@ export default function Services() {
                     Regular check-ins, feedback sessions, and practical guidance to keep your research on track.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Success Story */}
-          <div className="mt-16 bg-background p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl font-bold mb-6">Success Story</h3>
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-1">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Success Story" 
-                  className="rounded-lg shadow-md w-full"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <blockquote className="text-lg italic text-muted-foreground mb-4">
-                  "The mentorship I received from AD Vivum was transformative. My mentor not only helped me refine my research methodology but also guided me through the challenging process of data analysis and interpretation. The result was a successful dissertation defense and two published papers from my research."
-                </blockquote>
-                <p className="font-medium">
-                  Dr. Sarah Chen, Doctoral Graduate in Biomedical Sciences
-                </p>
               </div>
             </div>
           </div>
