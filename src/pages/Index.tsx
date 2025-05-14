@@ -1,4 +1,3 @@
-
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -259,7 +258,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Discover Vivum.App</h2>
-              <p className="text-lg mb-6">
+              <p className="text-lg mb-6 text-[#2C2C2E] font-medium">
                 Our AI-powered platform for evidence synthesis is transforming research efficiency.
                 Streamline your literature review process and focus on insights rather than data management.
               </p>
