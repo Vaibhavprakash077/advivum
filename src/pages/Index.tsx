@@ -49,9 +49,11 @@ export default function Index() {
       {/* Enhanced Hero Section with Dark Background */}
       <HeroSection
         title={
-          <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80">
-            ADVivum: Mentoring Minds, Shaping Futures
-          </span>
+          <div className="relative bg-gradient-to-r from-[#1a1f36] to-[#2b4f5f] p-4 rounded-xl">
+            <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80">
+              ADVivum: Mentoring Minds, Shaping Futures
+            </span>
+          </div>
         }
         subtitle="Empowering Research & Education"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
