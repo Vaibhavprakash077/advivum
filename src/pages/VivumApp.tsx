@@ -411,32 +411,6 @@ export default function VivumApp() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container">
-          <div className="bg-background p-8 rounded-lg shadow-sm max-w-3xl mx-auto">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop" 
-                  alt="Dr. Emily Rodriguez" 
-                  className="w-20 h-20 rounded-full object-cover"
-                />
-              </div>
-              <blockquote className="text-xl italic text-muted-foreground mb-6">
-                "Vivum.App transformed our systematic review process. What used to take my team 
-                months now takes weeks, with better accuracy and deeper insights. The AI-powered 
-                data extraction saved us countless hours of manual work."
-              </blockquote>
-              <div>
-                <p className="font-bold">Dr. Emily Rodriguez</p>
-                <p className="text-sm text-muted-foreground">Research Director, Medical Institute</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="py-16 px-4 bg-primary/10">
         <div className="container text-center">
