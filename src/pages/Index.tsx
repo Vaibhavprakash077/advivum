@@ -258,26 +258,26 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Discover Vivum.App</h2>
-              <p className="text-lg mb-6 text-[#2C2C2E] font-medium">
+              <p className="text-lg mb-6 text-[#222222] font-medium">
                 Our AI-powered platform for evidence synthesis is transforming research efficiency.
                 Streamline your literature review process and focus on insights rather than data management.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 text-[#222222]">
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span>Automated data extraction from research papers</span>
+                  <span className="font-medium">Automated data extraction from research papers</span>
                 </li>
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span>Intelligent organization of research findings</span>
+                  <span className="font-medium">Intelligent organization of research findings</span>
                 </li>
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span>Collaborative research environment</span>
+                  <span className="font-medium">Collaborative research environment</span>
                 </li>
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span>Time-saving analysis tools</span>
+                  <span className="font-medium">Time-saving analysis tools</span>
                 </li>
               </ul>
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
