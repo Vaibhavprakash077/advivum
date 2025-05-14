@@ -203,6 +203,33 @@ export default function About() {
         </div>
       </section>
 
+      {/* Certificate of Recognition */}
+      <section className="py-16 px-4 bg-background">
+        <div className="container">
+          <SectionTitle 
+            title="Our Recognition and Credentials" 
+            subtitle=""
+            gradient={true}
+          />
+          
+          <div className="flex flex-col items-center justify-center">
+            <div className="max-w-3xl w-full rounded-lg overflow-hidden shadow-lg mb-8">
+              <img 
+                src="/lovable-uploads/11e3d5bc-f08e-453d-8cc1-c4cd69a0e7ed.png" 
+                alt="AD Vivum Certificate of Recognition - Startup India" 
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            
+            <p className="text-lg text-center max-w-3xl mx-auto dark:text-gray-100">
+              AD Vivum is recognized as a startup by the Government of India under the Startup India initiative. 
+              Our commitment to innovation in AI and education is officially recognized.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <TeamSection members={teamMembers} />
 
