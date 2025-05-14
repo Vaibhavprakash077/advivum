@@ -153,7 +153,7 @@ export function HeroSection({
                 className={cn(
                   "mb-4 text-lg font-medium uppercase tracking-widest font-heading",
                   useGradient || darkBackground
-                    ? "text-white/90"
+                    ? "text-[#E0E0E0]" // Light white for dark backgrounds
                     : "text-primary font-semibold",
                   isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
@@ -166,14 +166,16 @@ export function HeroSection({
             <h1
               className={cn(
                 "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10",
-                useGradient || darkBackground ? "text-white" : "text-foreground",
+                useGradient || darkBackground 
+                  ? "text-[#FFFFFF]" // Bright white for dark backgrounds
+                  : "text-[#2C2C2E]", // Deep black for light backgrounds
                 isLoaded ? "animate-fade-in" : "opacity-0"
               )}
               style={{ animationDelay: `${delays[1]}s` }}
             >
               {title}
-              {/* Enhanced gradient glow effect behind title */}
-              <span className="absolute -z-10 inset-0 blur-xl opacity-20 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse-glow"></span>
+              {/* Enhanced gradient glow effect behind title - reduced opacity for better readability */}
+              <span className="absolute -z-10 inset-0 blur-xl opacity-10 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse-glow"></span>
             </h1>
 
             {description && (
@@ -181,8 +183,8 @@ export function HeroSection({
                 className={cn(
                   "font-body text-lg md:text-xl max-w-2xl mb-8 leading-relaxed",
                   useGradient || darkBackground
-                    ? "text-white/90"
-                    : "text-muted-foreground dark:text-white/80",
+                    ? "text-[#E0E0E0]" // Light white for dark backgrounds
+                    : "text-[#4A4A4D]", // Medium-dark gray for light backgrounds
                   alignLeft ? "" : "mx-auto",
                   isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
@@ -207,9 +209,9 @@ export function HeroSection({
                     size="lg"
                     className={cn(
                       "shadow-lg group relative overflow-hidden text-[16px] font-medium transition-all duration-300 transform hover:scale-105 rounded-lg",
-                      useGradient
-                        ? "bg-white text-primary hover:bg-white/90 border-none"
-                        : "glass-effect backdrop-blur-md bg-primary/90 hover:bg-primary text-white border-primary/30"
+                      useGradient || darkBackground
+                        ? "bg-white text-primary hover:bg-white/90 border-none" // Ensure high contrast on dark backgrounds
+                        : "bg-primary text-white hover:bg-primary/90 border-primary/30" // Ensure high contrast on light backgrounds
                     )}
                   >
                     <Link to={ctaLink || "#"}>
@@ -227,9 +229,9 @@ export function HeroSection({
                     size="lg"
                     className={cn(
                       "text-[16px] font-medium transition-all duration-300 transform hover:scale-105 rounded-lg",
-                      useGradient
-                        ? "glass-effect backdrop-blur-md bg-white/10 border-white/20 text-white hover:bg-white/20"
-                        : "glass-effect backdrop-blur-md bg-white/10 border-primary/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20 text-primary dark:text-white"
+                      useGradient || darkBackground
+                        ? "glass-effect backdrop-blur-md bg-white/10 border-white/20 text-white hover:bg-white/20" // Ensure visibility on dark backgrounds
+                        : "glass-effect backdrop-blur-md bg-white/10 border-primary/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20 text-primary dark:text-white" // Enhanced contrast for light/dark mode
                     )}
                   >
                     <Link to={ctaSecondaryLink || "#"}>
@@ -267,10 +269,10 @@ export function HeroSection({
                   alt="Tech illustration"
                   className="w-full h-auto drop-shadow-xl relative z-10"
                 />
-                {/* Enhanced glow effects */}
-                <div className="absolute -z-10 -left-4 -top-4 w-72 h-72 bg-primary/30 rounded-full filter blur-3xl opacity-70 animate-pulse-glow"></div>
+                {/* Reduced glow effects opacity for better text readability */}
+                <div className="absolute -z-10 -left-4 -top-4 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse-glow"></div>
                 <div
-                  className="absolute -z-10 -right-4 -bottom-4 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl opacity-70 animate-pulse-glow"
+                  className="absolute -z-10 -right-4 -bottom-4 w-72 h-72 bg-secondary/20 rounded-full filter blur-3xl opacity-50 animate-pulse-glow"
                   style={{ animationDelay: "1s" }}
                 ></div>
               </div>
@@ -298,7 +300,7 @@ export function HeroSection({
         className={cn(
           "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center",
           useGradient || darkBackground
-            ? "text-white/80 hover:text-white"
+            ? "text-white hover:text-white" // Brighter white for dark backgrounds
             : "text-primary/80 hover:text-primary",
           "transition-all duration-500 group",
           isLoaded ? "animate-fade-in" : "opacity-0"
