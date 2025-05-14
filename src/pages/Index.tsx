@@ -1,3 +1,4 @@
+
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,6 @@ import { ServiceCard } from "@/components/ui/service-card";
 import { CourseCard } from "@/components/ui/course-card";
 import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in";
-import { TechWorkflowGraphic } from "@/components/ui/tech-workflow-graphic";
 import Logo from "@/components/layout/Logo";
 
 // Sample featured courses
@@ -62,7 +62,8 @@ export default function Index() {
         ctaSecondaryLink="/about"
         n8nStyle={true}
         darkBackground={true}
-        graphicComponent={<TechWorkflowGraphic />}
+        useParticles={true}
+        alignLeft={false}
       />
 
       {/* Services Overview */}
