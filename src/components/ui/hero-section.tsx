@@ -27,6 +27,7 @@ interface HeroSectionProps {
   n8nStyle?: boolean;
   graphicComponent?: React.ReactNode;
   darkBackground?: boolean;
+  aboutStyle?: boolean;
 }
 
 export function HeroSection({
@@ -49,6 +50,7 @@ export function HeroSection({
   n8nStyle = false,
   graphicComponent,
   darkBackground = false,
+  aboutStyle = false,
 }: HeroSectionProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -87,13 +89,15 @@ export function HeroSection({
     <section
       className={cn(
         "relative py-20 md:py-28 overflow-hidden min-h-[100vh] flex items-center",
-        darkBackground 
-          ? "bg-[#1A1F2C]" // Dark background color
-          : useGradient
-            ? "bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60"
-            : backgroundImage
-              ? "bg-cover bg-center"
-              : "bg-gradient-to-br from-muted/70 via-background/95 to-background/90 dark:from-background dark:via-background/90 dark:to-background/80",
+        aboutStyle
+          ? "bg-[#1A1F2C]" // About style dark background
+          : darkBackground 
+            ? "bg-[#1A1F2C]" // Dark background color
+            : useGradient
+              ? "bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60"
+              : backgroundImage
+                ? "bg-cover bg-center"
+                : "bg-gradient-to-br from-muted/70 via-background/95 to-background/90 dark:from-background dark:via-background/90 dark:to-background/80",
         className
       )}
       style={
@@ -109,7 +113,7 @@ export function HeroSection({
       {useParticles && (
         <ParticlesBackground
           particleColor={
-            darkBackground || useGradient
+            darkBackground || useGradient || aboutStyle
               ? "rgba(255, 255, 255, 0.3)"
               : "rgba(0, 196, 180, 0.4)"
           }
@@ -126,7 +130,7 @@ export function HeroSection({
         <div className="absolute inset-0 bg-black/50" />
       )}
 
-      {!backgroundImage && !useGradient && !darkBackground && (
+      {!backgroundImage && !useGradient && !darkBackground && !aboutStyle && (
         <div className="absolute inset-0 bg-grid-white/[0.05] dark:bg-grid-white/[0.02]" />
       )}
 
@@ -138,12 +142,14 @@ export function HeroSection({
         <div
           className={cn(
             "flex flex-col md:flex-row items-center",
+            aboutStyle ? "text-center justify-center" : 
             alignLeft ? "text-left md:justify-between" : "text-center justify-center"
           )}
         >
           <div
             className={cn(
               "max-w-3xl",
+              aboutStyle ? "text-center" :
               alignLeft ? "" : "text-center",
               graphicImage || graphicComponent ? "md:w-1/2 mb-10 md:mb-0" : ""
             )}
@@ -152,7 +158,7 @@ export function HeroSection({
               <p
                 className={cn(
                   "mb-4 text-lg font-medium uppercase tracking-widest font-heading",
-                  useGradient || darkBackground
+                  aboutStyle || useGradient || darkBackground
                     ? "text-[#E0E0E0]" // Light white for dark backgrounds
                     : "text-primary font-semibold",
                   isLoaded ? "animate-fade-in" : "opacity-0"
@@ -163,29 +169,43 @@ export function HeroSection({
               </p>
             )}
 
-            <h1
-              className={cn(
-                "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10",
-                useGradient || darkBackground 
-                  ? "text-[#FFFFFF]" // Bright white for dark backgrounds
-                  : "text-[#2C2C2E]", // Deep black for light backgrounds
-                isLoaded ? "animate-fade-in" : "opacity-0"
-              )}
-              style={{ animationDelay: `${delays[1]}s` }}
-            >
-              {title}
-              {/* Enhanced gradient glow effect behind title - reduced opacity for better readability */}
-              <span className="absolute -z-10 inset-0 blur-xl opacity-10 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse-glow"></span>
-            </h1>
+            {aboutStyle ? (
+              <h1
+                className={cn(
+                  "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10 bg-gradient-to-r from-[#00C4B4] to-[#FEF7CD] bg-clip-text text-transparent",
+                  isLoaded ? "animate-fade-in" : "opacity-0"
+                )}
+                style={{ animationDelay: `${delays[1]}s` }}
+              >
+                {title}
+                <span className="absolute -z-10 inset-0 blur-xl opacity-10 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse-glow"></span>
+                <span className="block h-1 w-24 mx-auto mt-6 bg-gradient-to-r from-[#00C4B4] to-[#FEF7CD] rounded-full"></span>
+              </h1>
+            ) : (
+              <h1
+                className={cn(
+                  "font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10",
+                  useGradient || darkBackground 
+                    ? "text-[#FFFFFF]" // Bright white for dark backgrounds
+                    : "text-[#2C2C2E]", // Deep black for light backgrounds
+                  isLoaded ? "animate-fade-in" : "opacity-0"
+                )}
+                style={{ animationDelay: `${delays[1]}s` }}
+              >
+                {title}
+                {/* Enhanced gradient glow effect behind title - reduced opacity for better readability */}
+                <span className="absolute -z-10 inset-0 blur-xl opacity-10 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse-glow"></span>
+              </h1>
+            )}
 
             {description && (
               <p
                 className={cn(
                   "font-body text-lg md:text-xl max-w-2xl mb-8 leading-relaxed",
-                  useGradient || darkBackground
+                  aboutStyle || useGradient || darkBackground
                     ? "text-[#E0E0E0]" // Light white for dark backgrounds
                     : "text-[#4A4A4D]", // Medium-dark gray for light backgrounds
-                  alignLeft ? "" : "mx-auto",
+                  aboutStyle || !alignLeft ? "mx-auto" : "",
                   isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
                 style={{ animationDelay: `${delays[2]}s` }}
@@ -198,7 +218,7 @@ export function HeroSection({
               <div
                 className={cn(
                   "flex flex-wrap gap-4 mt-8",
-                  alignLeft ? "" : "justify-center",
+                  aboutStyle || !alignLeft ? "justify-center" : "",
                   isLoaded ? "animate-fade-in" : "opacity-0"
                 )}
                 style={{ animationDelay: `${delays[3]}s` }}
@@ -209,7 +229,7 @@ export function HeroSection({
                     size="lg"
                     className={cn(
                       "shadow-lg group relative overflow-hidden text-[16px] font-medium transition-all duration-300 transform hover:scale-105 rounded-lg",
-                      useGradient || darkBackground
+                      aboutStyle || useGradient || darkBackground
                         ? "bg-white text-primary hover:bg-white/90 border-none" // Ensure high contrast on dark backgrounds
                         : "bg-primary text-white hover:bg-primary/90 border-primary/30" // Ensure high contrast on light backgrounds
                     )}
@@ -229,7 +249,7 @@ export function HeroSection({
                     size="lg"
                     className={cn(
                       "text-[16px] font-medium transition-all duration-300 transform hover:scale-105 rounded-lg",
-                      useGradient || darkBackground
+                      aboutStyle || useGradient || darkBackground
                         ? "glass-effect backdrop-blur-md bg-white/10 border-white/20 text-white hover:bg-white/20" // Ensure visibility on dark backgrounds
                         : "glass-effect backdrop-blur-md bg-white/10 border-primary/20 dark:bg-black/20 dark:border-white/10 hover:bg-white/20 text-primary dark:text-white" // Enhanced contrast for light/dark mode
                     )}
@@ -299,7 +319,7 @@ export function HeroSection({
         onClick={scrollToContent}
         className={cn(
           "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center",
-          useGradient || darkBackground
+          useGradient || darkBackground || aboutStyle
             ? "text-white hover:text-white" // Brighter white for dark backgrounds
             : "text-primary/80 hover:text-primary",
           "transition-all duration-500 group",

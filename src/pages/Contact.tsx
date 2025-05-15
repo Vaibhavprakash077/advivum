@@ -72,6 +72,8 @@ export default function Contact() {
         title="Contact Us"
         subtitle="Get in Touch"
         description="Have questions about our services? We're here to help."
+        aboutStyle={true}
+        useParticles={true}
       />
 
       {/* Contact Form and Info */}

@@ -39,6 +39,8 @@ export default function Services() {
         title="Our Services"
         subtitle="Comprehensive Research Support"
         description="Explore our comprehensive services to support your research and learning journey."
+        aboutStyle={true}
+        useParticles={true}
       />
 
       {/* Navigation Tabs for Service Categories */}

@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -34,6 +33,8 @@ export default function VivumApp() {
         ctaLink="https://vivum.app"
         ctaSecondaryText="Learn More"
         ctaSecondaryLink="#features"
+        aboutStyle={true}
+        useParticles={true}
       />
 
       {/* What is Evidence Synthesis */}
