@@ -266,19 +266,19 @@ export default function Index() {
               <ul className="space-y-3 mb-8 text-[#222222]">
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Automated data extraction from research papers</span>
+                  <span className="font-medium text-white">Automated data extraction from research papers</span>
                 </li>
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Intelligent organization of research findings</span>
+                  <span className="font-medium text-white">Intelligent organization of research findings</span>
                 </li>
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Collaborative research environment</span>
+                  <span className="font-medium text-white">Collaborative research environment</span>
                 </li>
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Time-saving analysis tools</span>
+                  <span className="font-medium text-white">Time-saving analysis tools</span>
                 </li>
               </ul>
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
