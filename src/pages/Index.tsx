@@ -48,8 +48,8 @@ export default function Index() {
       {/* Enhanced Hero Section with Dark Background */}
       <HeroSection
         title={
-          <div className="relative bg-gradient-to-r from-[#1a1f36] to-[#2b4f5f] p-4 rounded-xl">
-            <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80">
+          <div className="relative bg-gradient-to-r from-[#1a1f36] to-[#2b4f5f] p-6 rounded-xl mb-2">
+            <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 font-semibold italic tracking-tight shadow-sm">
               ADVivum: Mentoring Minds, Shaping Futures
             </span>
           </div>
