@@ -65,7 +65,7 @@ export function HeroSection({
           ) : (
             typeof title === 'string' ? (
               <h1 className={cn(
-                "text-4xl md:text-5xl lg:text-6xl font-bold mb-8 relative inline-block",
+                "text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative inline-block",
                 titleClassName
               )}>
                 {title}
@@ -76,13 +76,13 @@ export function HeroSection({
           )}
           
           {subtitle && (
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-foreground">
               {subtitle}
             </h2>
           )}
           
           {description && (
-            <p className="text-xl md:text-2xl leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto">
               {description}
             </p>
           )}

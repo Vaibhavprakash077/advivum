@@ -1,4 +1,3 @@
-
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -47,13 +46,7 @@ export default function Index() {
     <PageLayout>
       {/* Enhanced Hero Section with Dark Background */}
       <HeroSection
-        title={
-          <div className="relative bg-gradient-to-r from-[#1a1f36] to-[#2b4f5f] p-6 rounded-xl mb-3">
-            <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 font-semibold italic tracking-tight shadow-sm text-lg md:text-xl">
-              ADVivum: Mentoring Minds, Shaping Futures
-            </span>
-          </div>
-        }
+        title="ADVivum: Mentoring Minds, Shaping Futures"
         subtitle="Empowering Research & Education"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
         ctaText="Explore Services"
@@ -64,6 +57,7 @@ export default function Index() {
         darkBackground={true}
         useParticles={true}
         alignLeft={false}
+        titleClassName="text-4xl md:text-5xl lg:text-6xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 mb-2"
       />
 
       {/* Services Overview */}
