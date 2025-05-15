@@ -40,6 +40,7 @@ export default function Services() {
         description="Explore our comprehensive services to support your research and learning journey."
         aboutStyle={true}
         useParticles={true}
+        titleClassName="text-[#000000]" // Add solid black color here for "Our Services"
       />
 
       {/* Navigation Tabs for Service Categories */}
@@ -78,7 +79,6 @@ export default function Services() {
           <SectionTitle 
             title="Comprehensive Research Support" 
             subtitle="We offer end-to-end services for researchers and learners at every stage"
-            titleClassName="text-[#000000]" // Add solid black color here
           />
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
