@@ -192,9 +192,9 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">
                   <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{item.year}: </span>
-                  {item.title}
+                  <span className="text-gray-900 dark:text-gray-100">{item.title}</span>
                 </h3>
-                <p className="text-lg dark:text-gray-100">
+                <p className="text-lg text-gray-900 dark:text-gray-100">
                   {item.description}
                 </p>
               </ScrollFadeIn>
