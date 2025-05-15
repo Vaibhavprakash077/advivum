@@ -1,323 +1,214 @@
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import PageLayout from "@/components/layout/PageLayout";
-import { SectionTitle } from "@/components/ui/section-title";
 import { HeroSection } from "@/components/ui/hero-section";
-import { ServiceCard } from "@/components/ui/service-card";
-import { CourseCard } from "@/components/ui/course-card";
-import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
-import { ScrollFadeIn } from "@/components/ui/scroll-fade-in";
-import Logo from "@/components/layout/Logo";
-
-// Sample featured courses
-const featuredCourses = [
-  {
-    title: "Advanced Research Methodology",
-    description: "Learn cutting-edge research methods and analytical frameworks.",
-    date: "Starting June 15, 2025",
-    duration: "8 weeks",
-    format: "Online & In-person",
-    category: "Research Publication",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "AI Tools for Systematic Reviews",
-    description: "Master the use of AI and automation in literature reviews and evidence synthesis.",
-    date: "Starting July 20, 2025",
-    duration: "6 weeks",
-    format: "Online",
-    category: "AI for Research",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "Medical Research Writing",
-    description: "Specialized course on writing and publishing medical research papers.",
-    date: "Starting August 5, 2025",
-    duration: "10 weeks",
-    format: "Hybrid",
-    category: "Medical Education",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop"
-  }
-];
+import { SectionTitle } from "@/components/ui/section-title";
+import { Card, CardContent } from "@/components/ui/card";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function Index() {
   return (
     <PageLayout>
-      {/* Enhanced Hero Section with Dark Background */}
+      {/* Hero Section */}
       <HeroSection
-        title={
-          <div className="relative bg-gradient-to-r from-[#1a1f36] to-[#2b4f5f] p-4 rounded-xl">
-            <span className="text-gradient-primary bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80">
-              ADVivum: Mentoring Minds, Shaping Futures
-            </span>
-          </div>
-        }
-        subtitle="Empowering Research & Education"
-        description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
-        ctaText="Explore Services"
+        title="Your Partner for Evidence-Based Digital Health Solutions"
+        subtitle="AD Vivum"
+        description="We specialize in creating digital tools that transform research into actionable health insights, bridging the gap between academic knowledge and real-world applications."
+        ctaText="Explore Our Services"
         ctaLink="/services"
-        ctaSecondaryText="Learn More"
-        ctaSecondaryLink="/about"
-        n8nStyle={true}
-        darkBackground={true}
+        ctaSecondaryText="Contact Us"
+        ctaSecondaryLink="/contact"
+        aboutStyle={true}
         useParticles={true}
-        alignLeft={false}
       />
 
-      {/* Services Overview */}
+      {/* What We Do Section */}
       <section className="py-16 px-4 bg-background">
         <div className="container">
-          <SectionTitle 
-            title="Our Services" 
-            subtitle="Comprehensive support for your research and learning journey"
-            showLine={true}
-            revealOnScroll={true}
+          <SectionTitle
+            title="What We Do"
+            subtitle="Bridging Research and Real-World Impact"
           />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard
-              title="Research Mentorship"
-              description="Personalized guidance to elevate your research skills and impact."
-              icon={<BookOpen className="h-10 w-10" />}
-              linkHref="/services#mentorship"
-              className="animate-fade-in [animation-delay:200ms]"
-              hoverContent={
-                <ul className="text-sm space-y-2 text-left">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>One-on-one sessions with experts</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Customized research plan development</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Regular progress tracking and feedback</span>
-                  </li>
-                </ul>
-              }
-            />
-            
-            <ServiceCard
-              title="Publication Assistance"
-              description="Expert support for manuscript preparation, submission, and successful publication."
-              icon={<FileCheck className="h-10 w-10" />}
-              linkHref="/services#publication"
-              className="animate-fade-in [animation-delay:400ms]"
-              hoverContent={
-                <ul className="text-sm space-y-2 text-left">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Journal selection guidance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Manuscript editing and formatting</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Response to reviewer comments</span>
-                  </li>
-                </ul>
-              }
-            />
-            
-            <ServiceCard
-              title="Courses & Workshops"
-              description="Master research methodologies and innovation with our expert-led programs."
-              icon={<GraduationCap className="h-10 w-10" />}
-              linkHref="/services#courses"
-              className="animate-fade-in [animation-delay:600ms]"
-              hoverContent={
-                <ul className="text-sm space-y-2 text-left">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Live online and in-person options</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Hands-on practical exercises</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Certification upon completion</span>
-                  </li>
-                </ul>
-              }
-            />
-            
-            <ServiceCard
-              title="Vivum.App"
-              description="Our AI-powered platform for evidence synthesis—transforming research efficiency."
-              icon={<Sparkles className="h-10 w-10" />}
-              linkHref="/vivum-app"
-              className="animate-fade-in [animation-delay:800ms]"
-              hoverContent={
-                <ul className="text-sm space-y-2 text-left">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Automated data extraction</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Intelligent analysis tools</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Collaboration features</span>
-                  </li>
-                </ul>
-              }
-            />
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-muted/30 p-6 flex flex-col items-center text-center animate-fade-in">
+              <Flame className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-bold mb-2">Digital Health Solutions</h3>
+              <p className="text-sm text-[#222222] font-medium">Transforming healthcare with innovative technology.</p>
+            </Card>
+            <Card className="bg-muted/30 p-6 flex flex-col items-center text-center animate-fade-in [animation-delay:200ms]">
+              <BookOpen className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-bold mb-2">Evidence Synthesis</h3>
+              <p className="text-sm text-[#222222] font-medium">Synthesizing research into actionable insights.</p>
+            </Card>
+            <Card className="bg-muted/30 p-6 flex flex-col items-center text-center animate-fade-in [animation-delay:400ms]">
+              <GraduationCap className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-bold mb-2">Academic Partnerships</h3>
+              <p className="text-sm text-[#222222] font-medium">Collaborating with universities to drive innovation.</p>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Additional Services */}
+      {/* Our Expertise Section */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="container">
-          <SectionTitle 
-            title="Specialized Solutions" 
-            subtitle="Supporting researchers and organizations at every step"
-            showLine={true}
-            gradient={true}
-            revealOnScroll={true}
+          <SectionTitle
+            title="Our Expertise"
+            subtitle="Turning Complexity into Clarity"
           />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard
-              title="IPR Services"
-              description="Protection for your intellectual property and innovation."
-              icon={<Award className="h-10 w-10" />}
-              linkHref="/services#ipr"
-              className="animate-fade-in [animation-delay:200ms]"
-            />
-            
-            <ServiceCard
-              title="Company Registration"
-              description="Streamlined business setup and compliance solutions."
-              icon={<Building className="h-10 w-10" />}
-              linkHref="/services#registration"
-              className="animate-fade-in [animation-delay:400ms]"
-            />
-            
-            <ServiceCard
-              title="Entrepreneurship Support"
-              description="Guidance for researchers venturing into entrepreneurship."
-              icon={<Users className="h-10 w-10" />}
-              linkHref="/services#entrepreneurship"
-              className="animate-fade-in [animation-delay:600ms]"
-            />
-            
-            <ServiceCard
-              title="Web Solutions"
-              description="Custom web development for research organizations and projects."
-              icon={<Globe className="h-10 w-10" />}
-              linkHref="/services#web"
-              className="animate-fade-in [animation-delay:800ms]"
-            />
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-slide-in-left">
+              <h3 className="text-2xl font-bold mb-6">AI-Driven Solutions</h3>
+              <p className="text-lg mb-6 text-[#222222] font-medium">
+                Leveraging artificial intelligence to enhance data analysis and decision-making in healthcare.
+              </p>
+              <ul className="space-y-3 text-[#222222]">
+                <li className="flex items-start">
+                  <FileCheck className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Predictive analytics for personalized treatment plans</span>
+                </li>
+                <li className="flex items-start">
+                  <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Automated literature reviews for evidence-based practice</span>
+                </li>
+                <li className="flex items-start">
+                  <GraduationCap className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Machine learning models for disease detection</span>
+                </li>
+              </ul>
+            </div>
+            <div className="animate-slide-in-right">
+              <h3 className="text-2xl font-bold mb-6">Data Visualization</h3>
+              <p className="text-lg mb-6 text-[#222222] font-medium">
+                Transforming complex data sets into clear, actionable insights through innovative visualization techniques.
+              </p>
+              <ul className="space-y-3 text-[#222222]">
+                <li className="flex items-start">
+                  <FileCheck className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Interactive dashboards for real-time monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Customizable reports for diverse stakeholders</span>
+                </li>
+                <li className="flex items-start">
+                  <GraduationCap className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Geospatial mapping for public health initiatives</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Courses */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container">
-          <SectionTitle 
-            title="Featured Courses" 
-            subtitle="Enhance your skills with our expert-led programs"
-            revealOnScroll={true}
-            showLine={true}
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredCourses.map((course, index) => (
-              <CourseCard
-                key={index}
-                {...course}
-                link="https://vivum.im/login/index.php"
-              />
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90">
-              <a href="https://vivum.im/login/index.php" target="_blank" rel="noopener noreferrer">
-                View All Courses
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Vivum.App Spotlight - Updated with proper text colors */}
-      <section className="py-20 px-4 bg-gradient-to-r from-primary/10 to-secondary/10 dark-section">
+      {/* Vivum.App Spotlight */}
+      <section className="py-20 px-4 bg-gradient-to-r from-primary/10 to-secondary/10">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Discover Vivum.App</h2>
-              <p className="text-lg mb-6 text-[#F5F5F5] dark:text-[#F5F5F5] font-medium">
+              <p className="text-lg mb-6 text-[#222222] font-medium">
                 Our AI-powered platform for evidence synthesis is transforming research efficiency.
                 Streamline your literature review process and focus on insights rather than data management.
               </p>
-              <ul className="space-y-3 mb-8 text-[#F5F5F5] dark:text-[#F5F5F5]">
+              <ul className="space-y-3 mb-8 text-[#222222]">
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
                   <span className="font-medium">Automated data extraction from research papers</span>
                 </li>
                 <li className="flex items-start">
-                  <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Intelligent organization of research findings</span>
+                  <FileCheck className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Intelligent categorization and synthesis</span>
                 </li>
                 <li className="flex items-start">
-                  <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Collaborative research environment</span>
-                </li>
-                <li className="flex items-start">
-                  <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
-                  <span className="font-medium">Time-saving analysis tools</span>
+                  <GraduationCap className="h-5 w-5 text-primary mr-2 mt-1" />
+                  <span className="font-medium">Advanced analysis tools for researchers</span>
                 </li>
               </ul>
-              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
-                <a href="https://vivum.app" target="_blank" rel="noopener noreferrer">
-                  Sign Up Now
-                </a>
+              <Button asChild size="lg">
+                <Link to="/vivum-app">Learn More</Link>
               </Button>
             </div>
-            <div className="relative rounded-lg overflow-hidden shadow-xl animate-slide-in-right group transform transition-all duration-500 hover:scale-105">
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1000&auto=format&fit=crop" 
-                alt="Vivum.App Interface" 
-                className="w-full h-auto rounded-lg transform transition-all duration-700 group-hover:scale-110"
+            <div className="rounded-xl overflow-hidden shadow-xl animate-slide-in-right">
+              <img
+                src="/vivum-logo.png"
+                alt="Vivum.App"
+                className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-8">
-                <div className="text-white">
-                  <h3 className="text-2xl font-bold mb-2">Vivum.App</h3>
-                  <p>Revolutionizing evidence synthesis and research workflows</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-muted/30 to-secondary/5">
-        <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4 animate-fade-in">Ready to Start Your Journey?</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms]">
-            Join AD Vivum today and transform your research and learning experience with expert guidance and cutting-edge tools.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center animate-fade-in [animation-delay:400ms]">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-              <Link to="/services">Explore Services</Link>
-            </Button>
+      {/* Why Choose Us */}
+      <section className="py-16 px-4 bg-background">
+        <div className="container">
+          <SectionTitle
+            title="Why Choose Us"
+            subtitle="Experience the AD Vivum Advantage"
+          />
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-muted/30 p-6 flex flex-col items-center text-center animate-fade-in">
+              <Award className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-bold mb-2">Expertise</h3>
+              <p className="text-sm text-[#222222] font-medium">Decades of experience in digital health and AI.</p>
+            </Card>
+            <Card className="bg-muted/30 p-6 flex flex-col items-center text-center animate-fade-in [animation-delay:200ms]">
+              <Building className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-bold mb-2">Innovation</h3>
+              <p className="text-sm text-[#222222] font-medium">Cutting-edge solutions tailored to your needs.</p>
+            </Card>
+            <Card className="bg-muted/30 p-6 flex flex-col items-center text-center animate-fade-in [animation-delay:400ms]">
+              <Globe className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-bold mb-2">Impact</h3>
+              <p className="text-sm text-[#222222] font-medium">Transforming healthcare on a global scale.</p>
+            </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Our Clients */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container">
+          <SectionTitle
+            title="Our Clients"
+            subtitle="Trusted by Leading Organizations"
+          />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Client 1"
+              className="rounded-lg shadow-md animate-fade-in"
+            />
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Client 2"
+              className="rounded-lg shadow-md animate-fade-in [animation-delay:100ms]"
+            />
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Client 3"
+              className="rounded-lg shadow-md animate-fade-in [animation-delay:200ms]"
+            />
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Client 4"
+              className="rounded-lg shadow-md animate-fade-in [animation-delay:300ms]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-primary/10 to-secondary/10">
+        <div className="container text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-fade-in">Ready to Transform Healthcare?</h2>
+          <p className="text-lg mb-8 text-[#222222] font-medium animate-fade-in [animation-delay:200ms]">
+            Contact us today to learn how AD Vivum can help you achieve your digital health goals.
+          </p>
+          <Button asChild size="lg" className="animate-fade-in [animation-delay:400ms]">
+            <Link to="/contact">Get Started</Link>
+          </Button>
         </div>
       </section>
     </PageLayout>
