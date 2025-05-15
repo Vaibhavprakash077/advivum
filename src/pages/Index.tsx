@@ -1,3 +1,4 @@
+
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -44,7 +45,7 @@ const featuredCourses = [
 export default function Index() {
   return (
     <PageLayout>
-      {/* Enhanced Hero Section with Dark Background */}
+      {/* Enhanced Hero Section with Full Height and Enhanced Typography */}
       <HeroSection
         title="ADVivum: Mentoring Minds, Shaping Futures"
         subtitle="Empowering Research & Education"
@@ -57,7 +58,8 @@ export default function Index() {
         darkBackground={true}
         useParticles={true}
         alignLeft={false}
-        titleClassName="text-4xl md:text-5xl lg:text-6xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 mb-2"
+        fullHeight={true} // Set to full viewport height
+        titleClassName="text-5xl md:text-6xl lg:text-7xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 mb-3 animate-fade-in shadow-xl"
       />
 
       {/* Services Overview */}

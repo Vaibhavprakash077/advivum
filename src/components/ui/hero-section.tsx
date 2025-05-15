@@ -20,6 +20,7 @@ interface HeroSectionProps {
   darkBackground?: boolean;   // Added this prop
   n8nStyle?: boolean;         // Added this prop
   alignLeft?: boolean;        // Added this prop
+  fullHeight?: boolean;       // Added this prop for full viewport height option
 }
 
 export function HeroSection({
@@ -33,18 +34,20 @@ export function HeroSection({
   aboutStyle = false,
   useParticles = false,
   titleClassName,
-  ctaText,             // Added to function parameters
-  ctaLink,             // Added to function parameters
-  ctaSecondaryText,    // Added to function parameters
-  ctaSecondaryLink,    // Added to function parameters
-  darkBackground,      // Added to function parameters
-  n8nStyle,            // Added to function parameters
-  alignLeft,           // Added to function parameters
+  ctaText,             
+  ctaLink,             
+  ctaSecondaryText,    
+  ctaSecondaryLink,    
+  darkBackground,     
+  n8nStyle,            
+  alignLeft,
+  fullHeight = false,  // Default to false to maintain backward compatibility           
 }: HeroSectionProps) {
   return (
     <section
       className={cn(
-        "relative w-full overflow-hidden min-h-[50vh] flex items-center justify-center",
+        "relative w-full overflow-hidden flex items-center justify-center",
+        fullHeight ? "min-h-[100vh]" : "min-h-[50vh]", // Use full height if specified
         aboutStyle ? "bg-gradient-to-br from-primary/10 to-secondary/10" : "",
         darkBackground ? "bg-gradient-to-r from-[#1a1f36] to-[#2b4f5f]" : "",
         className
@@ -65,7 +68,7 @@ export function HeroSection({
           ) : (
             typeof title === 'string' ? (
               <h1 className={cn(
-                "text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative inline-block",
+                "text-5xl md:text-6xl lg:text-7xl font-bold mb-8 relative inline-block",
                 titleClassName
               )}>
                 {title}
@@ -76,21 +79,21 @@ export function HeroSection({
           )}
           
           {subtitle && (
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-foreground">
               {subtitle}
             </h2>
           )}
           
           {description && (
-            <p className="text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto mb-10">
               {description}
             </p>
           )}
           
-          {/* Render CTA buttons if provided */}
+          {/* Enhanced CTA buttons with larger size and visual lift */}
           {(ctaText || ctaSecondaryText) && (
             <div className={cn(
-              "mt-10 flex gap-4",
+              "mt-10 flex flex-wrap gap-5",
               align === "center" && !alignLeft && "justify-center",
               align === "right" && "justify-end"
             )}>
@@ -98,7 +101,7 @@ export function HeroSection({
                 <a 
                   href={ctaLink} 
                   className={cn(
-                    "inline-flex items-center px-6 py-3 rounded-md font-medium text-white",
+                    "inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl",
                     n8nStyle ? "bg-gradient-to-r from-[#00C4B4] to-[#F28C38]" : "bg-primary"
                   )}
                 >
@@ -109,7 +112,7 @@ export function HeroSection({
               {ctaSecondaryText && ctaSecondaryLink && (
                 <a 
                   href={ctaSecondaryLink} 
-                  className="inline-flex items-center px-6 py-3 rounded-md font-medium text-foreground bg-transparent border border-foreground/20 hover:bg-muted"
+                  className="inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-foreground bg-transparent border-2 border-foreground/30 hover:bg-muted transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                 >
                   {ctaSecondaryText}
                 </a>
