@@ -169,7 +169,7 @@ export default {
 			typography: {
 				DEFAULT: {
 					css: {
-						color: '#333333',
+						color: '#F1F1F1', /* Using dark mode text color as default */
 						lineHeight: '1.6',
 						'h1, h2, h3, h4': {
 							fontWeight: '700',
