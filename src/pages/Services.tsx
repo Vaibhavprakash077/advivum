@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -40,7 +41,8 @@ export default function Services() {
         description="Explore our comprehensive services to support your research and learning journey."
         aboutStyle={true}
         useParticles={true}
-        titleClassName="text-[#000000]" // Add solid black color here for "Our Services"
+        titleClassName="text-[#FFFFFF]" // Updated to match Vivum.App's white color
+        darkBackground={true} // Added to match the dark background similar to Vivum.App
       />
 
       {/* Navigation Tabs for Service Categories */}
