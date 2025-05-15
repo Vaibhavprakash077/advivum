@@ -37,23 +37,23 @@ export default function VivumApp() {
         useParticles={true}
       />
 
-      {/* What is Evidence Synthesis */}
+      {/* What is Evidence Synthesis - Updated text colors */}
       <section className="py-16 px-4 bg-background">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl font-bold mb-6">What is Evidence Synthesis?</h2>
-              <p className="text-lg mb-6 text-[#222222] font-medium">
+              <p className="text-lg mb-6">
                 Evidence synthesis is the process of collecting, analyzing, and integrating 
                 research findings to provide a comprehensive understanding of a specific 
                 topic or question.
               </p>
-              <p className="text-lg mb-6 text-[#222222] font-medium">
+              <p className="text-lg mb-6">
                 Traditionally, this process has been labor-intensive, requiring researchers to 
                 manually sort through dozens or even hundreds of research papers, extract 
                 relevant data, and systematically analyze the findings.
               </p>
-              <p className="text-lg text-[#222222] font-medium">
+              <p className="text-lg">
                 At AD Vivum, we've developed Vivum.App to revolutionize this process, 
                 using cutting-edge AI technology to automate many of the time-consuming tasks 
                 while enhancing accuracy and insight.
@@ -302,7 +302,7 @@ export default function VivumApp() {
       </section>
 
       {/* Technology Behind */}
-      <section className="py-16 px-4 bg-gradient-to-r from-primary/10 to-secondary/10">
+      <section className="py-16 px-4 bg-gradient-to-r from-primary/10 to-secondary/10 dark-section">
         <div className="container">
           <SectionTitle 
             title="The Technology Behind Vivum.App" 

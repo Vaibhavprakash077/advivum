@@ -1,4 +1,3 @@
-
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -253,17 +252,17 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Vivum.App Spotlight */}
-      <section className="py-20 px-4 bg-gradient-to-r from-primary/10 to-secondary/10">
+      {/* Vivum.App Spotlight - Updated with proper text colors */}
+      <section className="py-20 px-4 bg-gradient-to-r from-primary/10 to-secondary/10 dark-section">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Discover Vivum.App</h2>
-              <p className="text-lg mb-6 text-[#222222] font-medium">
+              <p className="text-lg mb-6 text-[#F5F5F5] dark:text-[#F5F5F5] font-medium">
                 Our AI-powered platform for evidence synthesis is transforming research efficiency.
                 Streamline your literature review process and focus on insights rather than data management.
               </p>
-              <ul className="space-y-3 mb-8 text-[#222222]">
+              <ul className="space-y-3 mb-8 text-[#F5F5F5] dark:text-[#F5F5F5]">
                 <li className="flex items-start">
                   <Sparkles className="h-5 w-5 text-primary mr-2 mt-1" />
                   <span className="font-medium">Automated data extraction from research papers</span>
