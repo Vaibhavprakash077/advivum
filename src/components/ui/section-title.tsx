@@ -10,6 +10,7 @@ interface SectionTitleProps {
   gradient?: boolean;
   showLine?: boolean;
   revealOnScroll?: boolean;
+  titleClassName?: string; // Added prop for custom title styling
 }
 
 export function SectionTitle({
@@ -20,6 +21,7 @@ export function SectionTitle({
   gradient = false,
   showLine = false,
   revealOnScroll = true,
+  titleClassName, // Added prop
 }: SectionTitleProps) {
   const [isVisible, setIsVisible] = useState(!revealOnScroll);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -65,7 +67,8 @@ export function SectionTitle({
     >
       <h2 className={cn(
         "text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl relative inline-block",
-        gradient ? "bg-gradient-to-r from-primary via-primary/90 to-secondary bg-clip-text text-transparent" : ""
+        gradient ? "bg-gradient-to-r from-primary via-primary/90 to-secondary bg-clip-text text-transparent" : "",
+        titleClassName // Add the custom title class if provided
       )}>
         {title}
       </h2>

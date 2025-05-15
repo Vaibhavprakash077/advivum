@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -79,6 +78,7 @@ export default function Services() {
           <SectionTitle 
             title="Comprehensive Research Support" 
             subtitle="We offer end-to-end services for researchers and learners at every stage"
+            titleClassName="text-[#000000]" // Add solid black color here
           />
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
