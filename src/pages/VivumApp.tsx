@@ -43,17 +43,17 @@ export default function VivumApp() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h2 className="text-3xl font-bold mb-6">What is Evidence Synthesis?</h2>
-              <p className="text-lg mb-6 text-[#222222] font-medium">
+              <p className="text-lg mb-6 text-[#e0e0e0] font-medium leading-relaxed">
                 Evidence synthesis is the process of collecting, analyzing, and integrating 
                 research findings to provide a comprehensive understanding of a specific 
                 topic or question.
               </p>
-              <p className="text-lg mb-6 text-[#222222] font-medium">
+              <p className="text-lg mb-6 text-[#e0e0e0] font-medium leading-relaxed text-shadow">
                 Traditionally, this process has been labor-intensive, requiring researchers to 
                 manually sort through dozens or even hundreds of research papers, extract 
                 relevant data, and systematically analyze the findings.
               </p>
-              <p className="text-lg text-[#222222] font-medium">
+              <p className="text-lg text-[#e0e0e0] font-medium leading-relaxed text-shadow">
                 At AD Vivum, we've developed Vivum.App to revolutionize this process, 
                 using cutting-edge AI technology to automate many of the time-consuming tasks 
                 while enhancing accuracy and insight.
@@ -64,25 +64,25 @@ export default function VivumApp() {
               <Card className="bg-muted/30 p-6 flex flex-col items-center text-center">
                 <Search className="h-10 w-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">Literature Review</h3>
-                <p className="text-sm text-[#222222] font-medium">Comprehensive exploration of existing research</p>
+                <p className="text-sm text-[#e0e0e0] font-medium">Comprehensive exploration of existing research</p>
               </Card>
               
               <Card className="bg-muted/30 p-6 flex flex-col items-center text-center">
                 <Database className="h-10 w-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">Data Extraction</h3>
-                <p className="text-sm text-[#222222] font-medium">Systematic collection of relevant information</p>
+                <p className="text-sm text-[#e0e0e0] font-medium">Systematic collection of relevant information</p>
               </Card>
               
               <Card className="bg-muted/30 p-6 flex flex-col items-center text-center">
                 <BarChart className="h-10 w-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">Analysis</h3>
-                <p className="text-sm text-[#222222] font-medium">Critical evaluation of collected evidence</p>
+                <p className="text-sm text-[#e0e0e0] font-medium">Critical evaluation of collected evidence</p>
               </Card>
               
               <Card className="bg-muted/30 p-6 flex flex-col items-center text-center">
                 <Share2 className="h-10 w-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">Integration</h3>
-                <p className="text-sm text-[#222222] font-medium">Synthesis of findings into cohesive insights</p>
+                <p className="text-sm text-[#e0e0e0] font-medium">Synthesis of findings into cohesive insights</p>
               </Card>
             </div>
           </div>
