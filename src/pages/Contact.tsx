@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -65,17 +66,17 @@ export default function Contact() {
 
   return (
     <PageLayout>
-      {/* Hero Section with updated title styling */}
+      {/* Hero Section with updated title and tagline styling */}
       <HeroSection
         title="" // Adding empty title to satisfy the type requirement
         titleElement={
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
-              <span>ADVivum: </span>
-              <span className="bg-gradient-to-r from-primary via-primary/80 to-secondary/90 bg-clip-text text-transparent">
-                Mentoring Minds, Shaping Futures
-              </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-3 tracking-tight font-modern bg-gradient-to-r from-white via-white/95 to-white/85 bg-clip-text text-transparent animate-fade-in">
+              ADVivum
             </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl italic font-medium bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38] bg-clip-text text-transparent mb-4 animate-fade-in [animation-delay:300ms]">
+              Mentoring Minds, Shaping Futures
+            </p>
           </div>
         }
         aboutStyle={true}
