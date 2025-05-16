@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -200,20 +199,6 @@ export default function Contact() {
                     <a href="tel:+919021699000" className="text-muted-foreground hover:text-primary">
                       +91 9021699000
                     </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="mr-4 p-3 bg-primary/10 rounded-full">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-lg">Office</h3>
-                    <p className="text-muted-foreground">
-                      123 Research Avenue<br />
-                      Boston, MA 02115<br />
-                      United States
-                    </p>
                   </div>
                 </div>
                 
