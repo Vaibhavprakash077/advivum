@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -10,9 +11,7 @@ import {
   Phone, 
   MapPin, 
   Send, 
-  MessageSquare, 
   Clock, 
-  Calendar, 
   CheckCircle 
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -230,20 +229,6 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </div>
-              
-              <div className="mt-8 p-6 bg-muted/30 rounded-lg border">
-                <h3 className="font-bold text-lg mb-4 flex items-center">
-                  <Calendar className="h-5 w-5 mr-2" /> Schedule a Consultation
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Prefer to speak with one of our experts directly? Schedule a consultation at a time that works for you.
-                </p>
-                <Button asChild variant="outline" className="w-full">
-                  <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                    Book a Meeting <MessageSquare className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </div>
             </div>
           </div>
