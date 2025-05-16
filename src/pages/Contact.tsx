@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -68,6 +67,7 @@ export default function Contact() {
     <PageLayout>
       {/* Hero Section with updated title styling */}
       <HeroSection
+        title="" // Adding empty title to satisfy the type requirement
         titleElement={
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
