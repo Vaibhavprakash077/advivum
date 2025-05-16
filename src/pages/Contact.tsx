@@ -325,7 +325,7 @@ export default function Contact() {
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="tel:+919021699000">
-                Call Us <Phone className="ml-2 h-4 w-4" />
+                Contact Us <Phone className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>
