@@ -49,6 +49,18 @@ export function HeroSection({
     return link.startsWith('http://') || link.startsWith('https://');
   };
 
+  // Helper function to handle hash links (scrolling to section)
+  const handleHashLink = (event: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    event.preventDefault();
+    if (hash.startsWith('#')) {
+      const elementId = hash.substring(1);
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section
       className={cn(
@@ -132,7 +144,16 @@ export function HeroSection({
               )}
               
               {ctaSecondaryText && ctaSecondaryLink && (
-                isExternalLink(ctaSecondaryLink) ? (
+                ctaSecondaryLink.startsWith('#') ? (
+                  <a 
+                    href={ctaSecondaryLink} 
+                    onClick={(e) => handleHashLink(e, ctaSecondaryLink)}
+                    className="inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-foreground bg-transparent border-2 border-foreground/30 hover:bg-muted transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                    aria-label={ctaSecondaryText}
+                  >
+                    {ctaSecondaryText}
+                  </a>
+                ) : isExternalLink(ctaSecondaryLink) ? (
                   <a 
                     href={ctaSecondaryLink} 
                     className="inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-foreground bg-transparent border-2 border-foreground/30 hover:bg-muted transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"

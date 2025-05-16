@@ -16,10 +16,23 @@ export default function PageLayout({ children }: PageLayoutProps) {
   // Enhanced effect to handle route changes
   useEffect(() => {
     console.log('Route changed to:', location.pathname);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    
+    // Check if there's a hash in the URL
+    if (location.hash) {
+      // Wait a bit for the DOM to fully render
+      setTimeout(() => {
+        const id = location.hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
     
     // Log to help debug routing issues
     console.log('PageLayout mounted/updated on path:', location.pathname);
@@ -31,7 +44,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
         console.log('Navigation type:', (navEntries[0] as PerformanceNavigationTiming).type);
       }
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="flex min-h-screen flex-col">
