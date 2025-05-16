@@ -13,12 +13,24 @@ export default function PageLayout({ children }: PageLayoutProps) {
   const isMobile = useIsMobile();
   const location = useLocation();
 
-  // Effect to handle scroll to top when route changes
+  // Enhanced effect to handle route changes
   useEffect(() => {
+    console.log('Route changed to:', location.pathname);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+    
+    // Log to help debug routing issues
+    console.log('PageLayout mounted/updated on path:', location.pathname);
+    
+    // This can help identify if the component is properly mounting on direct navigation
+    if (window.performance) {
+      const navEntries = performance.getEntriesByType('navigation');
+      if (navEntries.length > 0) {
+        console.log('Navigation type:', (navEntries[0] as PerformanceNavigationTiming).type);
+      }
+    }
   }, [location.pathname]);
 
   return (
