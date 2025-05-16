@@ -4,6 +4,24 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Logo from "./Logo";
+import { useEffect } from "react";
+
+// Custom link component that handles scrolling to top
+const ScrollToTopLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
+  const handleClick = () => {
+    // Smooth scroll to top after navigation
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <Link to={to} className="hover:text-primary" onClick={handleClick}>
+      {children}
+    </Link>
+  );
+};
 
 export default function Footer() {
   return (
@@ -81,8 +99,8 @@ export default function Footer() {
           <a href="https://advivum.im" className="hover:text-primary">advivum.im</a>
         </div>
         <div className="mt-2 space-x-4">
-          <Link to="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
-          <Link to="/terms-of-service" className="hover:text-primary">Terms of Service</Link>
+          <ScrollToTopLink to="/privacy-policy">Privacy Policy</ScrollToTopLink>
+          <ScrollToTopLink to="/terms-of-service">Terms of Service</ScrollToTopLink>
         </div>
       </div>
     </footer>
