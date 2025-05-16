@@ -1,10 +1,7 @@
 
 import { Link } from "react-router-dom";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Logo from "./Logo";
-import { useEffect } from "react";
 
 // Custom link component that handles scrolling to top
 const ScrollToTopLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
@@ -26,7 +23,7 @@ const ScrollToTopLink = ({ to, children }: { to: string; children: React.ReactNo
 export default function Footer() {
   return (
     <footer className="bg-muted/50 py-12 mt-12">
-      <div className="container grid gap-8 md:grid-cols-4">
+      <div className="container grid gap-8 md:grid-cols-3">
         <div className="space-y-4">
           <Logo />
           <p className="text-muted-foreground text-sm">
@@ -71,17 +68,6 @@ export default function Footer() {
               <a href="tel:+919021699000" className="text-muted-foreground hover:text-primary">+91 9021699000</a>
             </li>
           </ul>
-        </div>
-
-        <div>
-          <h3 className="font-medium text-lg mb-4">Newsletter</h3>
-          <p className="text-muted-foreground text-sm mb-4">
-            Subscribe to our newsletter for updates and insights.
-          </p>
-          <div className="flex gap-2">
-            <Input type="email" placeholder="Your email" className="max-w-[220px]" />
-            <Button type="submit">Subscribe</Button>
-          </div>
         </div>
       </div>
       <div className="container mt-8 pt-8 border-t text-center text-muted-foreground text-sm">
