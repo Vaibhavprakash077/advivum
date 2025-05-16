@@ -58,8 +58,8 @@ export default function Index() {
         darkBackground={true}
         useParticles={true}
         alignLeft={false}
-        fullHeight={true} // Set to full viewport height
-        titleClassName="text-5xl md:text-6xl lg:text-7xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 mb-3 animate-fade-in shadow-xl"
+        fullHeight={true} 
+        titleClassName="font-modern text-5xl md:text-6xl lg:text-7xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 mb-3 animate-fade-in shadow-xl tracking-wide"
       />
 
       {/* Services Overview */}

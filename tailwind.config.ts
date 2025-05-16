@@ -165,6 +165,7 @@ export default {
 				heading: ['Poppins', 'Montserrat', 'system-ui', 'sans-serif'],
 				display: ['Montserrat', 'system-ui', 'sans-serif'],
 				body: ['Inter', 'Manrope', 'system-ui', 'sans-serif'],
+				modern: ['Space Grotesk', 'system-ui', 'sans-serif'],
 			},
 			typography: {
 				DEFAULT: {
