@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -65,11 +66,18 @@ export default function Contact() {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
+      {/* Hero Section with updated title styling */}
       <HeroSection
-        title="Contact Us"
-        subtitle="Get in Touch"
-        description="Have questions about our services? We're here to help."
+        titleElement={
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
+              <span>ADVivum: </span>
+              <span className="bg-gradient-to-r from-primary via-primary/80 to-secondary/90 bg-clip-text text-transparent">
+                Mentoring Minds, Shaping Futures
+              </span>
+            </h1>
+          </div>
+        }
         aboutStyle={true}
         useParticles={true}
       />
