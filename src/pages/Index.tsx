@@ -43,6 +43,14 @@ const featuredCourses = [
 ];
 
 export default function Index() {
+  // Function to handle smooth scrolling to sections within the page
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <PageLayout>
       {/* Enhanced Hero Section with Full Height and Enhanced Typography */}
@@ -51,7 +59,7 @@ export default function Index() {
         subtitle="Empowering Research & Education"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
         ctaText="Explore Services"
-        ctaLink="/services"
+        ctaLink="/services" 
         ctaSecondaryText="Learn More"
         ctaSecondaryLink="/about"
         n8nStyle={true}

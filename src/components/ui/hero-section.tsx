@@ -1,6 +1,7 @@
 
 import { cn } from "@/lib/utils";
 import { ParticlesBackground } from "./particles-background";
+import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
   title: string | React.ReactNode;  // Changed to accept both string and ReactNode
@@ -13,14 +14,14 @@ interface HeroSectionProps {
   aboutStyle?: boolean;
   useParticles?: boolean;
   titleClassName?: string;
-  ctaText?: string;           // Added this prop
-  ctaLink?: string;           // Added this prop
-  ctaSecondaryText?: string;  // Added this prop
-  ctaSecondaryLink?: string;  // Added this prop
-  darkBackground?: boolean;   // Added this prop
-  n8nStyle?: boolean;         // Added this prop
-  alignLeft?: boolean;        // Added this prop
-  fullHeight?: boolean;       // Added this prop for full viewport height option
+  ctaText?: string;           
+  ctaLink?: string;           
+  ctaSecondaryText?: string;  
+  ctaSecondaryLink?: string;  
+  darkBackground?: boolean;   
+  n8nStyle?: boolean;         
+  alignLeft?: boolean;        
+  fullHeight?: boolean;       
 }
 
 export function HeroSection({
@@ -41,8 +42,13 @@ export function HeroSection({
   darkBackground,     
   n8nStyle,            
   alignLeft,
-  fullHeight = false,  // Default to false to maintain backward compatibility           
+  fullHeight = false,           
 }: HeroSectionProps) {
+  // Helper function to determine if link is internal or external
+  const isExternalLink = (link: string) => {
+    return link.startsWith('http://') || link.startsWith('https://');
+  };
+
   return (
     <section
       className={cn(
@@ -90,7 +96,7 @@ export function HeroSection({
             </p>
           )}
           
-          {/* Enhanced CTA buttons with larger size and visual lift */}
+          {/* Enhanced CTA buttons with proper link handling and accessibility */}
           {(ctaText || ctaSecondaryText) && (
             <div className={cn(
               "mt-10 flex flex-wrap gap-5",
@@ -98,24 +104,53 @@ export function HeroSection({
               align === "right" && "justify-end"
             )}>
               {ctaText && ctaLink && (
-                <a 
-                  href={ctaLink} 
-                  className={cn(
-                    "inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl",
-                    n8nStyle ? "bg-gradient-to-r from-[#00C4B4] to-[#F28C38]" : "bg-primary"
-                  )}
-                >
-                  {ctaText}
-                </a>
+                isExternalLink(ctaLink) ? (
+                  <a 
+                    href={ctaLink} 
+                    className={cn(
+                      "inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl",
+                      n8nStyle ? "bg-gradient-to-r from-[#00C4B4] to-[#F28C38]" : "bg-primary"
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${ctaText} - opens in a new tab`}
+                  >
+                    {ctaText}
+                  </a>
+                ) : (
+                  <Link 
+                    to={ctaLink} 
+                    className={cn(
+                      "inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl",
+                      n8nStyle ? "bg-gradient-to-r from-[#00C4B4] to-[#F28C38]" : "bg-primary"
+                    )}
+                    aria-label={ctaText}
+                  >
+                    {ctaText}
+                  </Link>
+                )
               )}
               
               {ctaSecondaryText && ctaSecondaryLink && (
-                <a 
-                  href={ctaSecondaryLink} 
-                  className="inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-foreground bg-transparent border-2 border-foreground/30 hover:bg-muted transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                >
-                  {ctaSecondaryText}
-                </a>
+                isExternalLink(ctaSecondaryLink) ? (
+                  <a 
+                    href={ctaSecondaryLink} 
+                    className="inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-foreground bg-transparent border-2 border-foreground/30 hover:bg-muted transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${ctaSecondaryText} - opens in a new tab`}
+                  >
+                    {ctaSecondaryText}
+                  </a>
+                ) : (
+                  <Link 
+                    to={ctaSecondaryLink} 
+                    className="inline-flex items-center px-8 py-4 rounded-md text-lg font-semibold text-foreground bg-transparent border-2 border-foreground/30 hover:bg-muted transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                    aria-label={ctaSecondaryText}
+                  >
+                    {ctaSecondaryText}
+                  </Link>
+                )
               )}
             </div>
           )}
