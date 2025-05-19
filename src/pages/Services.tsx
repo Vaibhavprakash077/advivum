@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroSection } from "@/components/ui/hero-section";
@@ -329,25 +328,7 @@ export default function Services() {
             </div>
           </div>
           
-          {/* Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-muted/30 p-6 rounded-lg">
-              <blockquote className="text-lg italic text-muted-foreground mb-4">
-                "The publication assistance from AD Vivum helped me navigate the complex process of journal submission. Their expert guidance on responding to reviewer comments was invaluable, and ultimately led to acceptance in a high-impact journal."
-              </blockquote>
-              <p className="font-medium">
-                Prof. James Wilson, Medical Research Institute
-              </p>
-            </div>
-            <div className="bg-muted/30 p-6 rounded-lg">
-              <blockquote className="text-lg italic text-muted-foreground mb-4">
-                "As a non-native English speaker, their editing services significantly improved the clarity and readability of my manuscript. Their strategic advice on journal selection saved me months of time in the publication process."
-              </blockquote>
-              <p className="font-medium">
-                Dr. Ana Lopez, Environmental Sciences
-              </p>
-            </div>
-          </div>
+          {/* Removed testimonials section */}
         </div>
       </section>
 
