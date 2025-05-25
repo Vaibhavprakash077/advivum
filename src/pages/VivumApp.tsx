@@ -143,41 +143,41 @@ export default function VivumApp() {
           />
           
           <Tabs defaultValue="automate" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 md:grid-cols-4">
-              <TabsTrigger value="automate">Automation</TabsTrigger>
-              <TabsTrigger value="interface">Interface</TabsTrigger>
-              <TabsTrigger value="collaboration">Collaboration</TabsTrigger>
-              <TabsTrigger value="analysis">Analysis</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-1 md:gap-0 h-auto md:h-10 p-1">
+              <TabsTrigger value="automate" className="text-xs md:text-sm py-2">Automation</TabsTrigger>
+              <TabsTrigger value="interface" className="text-xs md:text-sm py-2">Interface</TabsTrigger>
+              <TabsTrigger value="collaboration" className="text-xs md:text-sm py-2">Collaboration</TabsTrigger>
+              <TabsTrigger value="analysis" className="text-xs md:text-sm py-2">Analysis</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="automate" className="mt-6">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-6">Automated Synthesis</h3>
-                  <p className="text-lg mb-6">
+            <TabsContent value="automate" className="mt-8 space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-3xl font-bold">Automated Synthesis</h3>
+                  <p className="text-base md:text-lg leading-relaxed">
                     Our AI engine automatically extracts key data from research papers, 
                     including methodologies, sample sizes, outcomes, and statistical significance.
                   </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Automatic PDF text extraction and parsing</span>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Automatic PDF text extraction and parsing</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Intelligent categorization of research elements</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Intelligent categorization of research elements</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Statistical data compilation across studies</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Statistical data compilation across studies</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Citation management and bibliography generation</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Citation management and bibliography generation</span>
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="rounded-lg overflow-hidden shadow-lg order-first lg:order-last">
                   <img 
                     src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1000&auto=format&fit=crop" 
                     alt="Automated Synthesis Interface" 
@@ -187,34 +187,34 @@ export default function VivumApp() {
               </div>
             </TabsContent>
             
-            <TabsContent value="interface" className="mt-6">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-6">User-Friendly Interface</h3>
-                  <p className="text-lg mb-6">
+            <TabsContent value="interface" className="mt-8 space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-3xl font-bold">User-Friendly Interface</h3>
+                  <p className="text-base md:text-lg leading-relaxed">
                     Our intuitive dashboard makes complex research synthesis accessible to 
                     researchers at all levels of expertise.
                   </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Drag-and-drop paper upload functionality</span>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Drag-and-drop paper upload functionality</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Customizable project templates and workflows</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Customizable project templates and workflows</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Visual filters for sorting and organizing papers</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Visual filters for sorting and organizing papers</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>One-click export in multiple formats (PDF, DOCX, CSV)</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">One-click export in multiple formats (PDF, DOCX, CSV)</span>
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="rounded-lg overflow-hidden shadow-lg order-first lg:order-last">
                   <img 
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
                     alt="User Interface" 
@@ -224,34 +224,34 @@ export default function VivumApp() {
               </div>
             </TabsContent>
             
-            <TabsContent value="collaboration" className="mt-6">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-6">Collaborative Research</h3>
-                  <p className="text-lg mb-6">
+            <TabsContent value="collaboration" className="mt-8 space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-3xl font-bold">Collaborative Research</h3>
+                  <p className="text-base md:text-lg leading-relaxed">
                     Enable seamless teamwork among researchers, regardless of geographic location, 
                     with real-time collaboration features.
                   </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Real-time multi-user editing and annotation</span>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Real-time multi-user editing and annotation</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Role-based permissions and access controls</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Role-based permissions and access controls</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Comment and feedback system for peer review</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Comment and feedback system for peer review</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Activity tracking and version history</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Activity tracking and version history</span>
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="rounded-lg overflow-hidden shadow-lg order-first lg:order-last">
                   <img 
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
                     alt="Collaboration Features" 
@@ -261,34 +261,34 @@ export default function VivumApp() {
               </div>
             </TabsContent>
             
-            <TabsContent value="analysis" className="mt-6">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-6">Advanced Analysis Tools</h3>
-                  <p className="text-lg mb-6">
+            <TabsContent value="analysis" className="mt-8 space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-3xl font-bold">Advanced Analysis Tools</h3>
+                  <p className="text-base md:text-lg leading-relaxed">
                     Powerful analytical capabilities help you gain deeper insights from your 
                     synthesized research data.
                   </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Interactive data visualization dashboards</span>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Interactive data visualization dashboards</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Meta-analysis and statistical comparison tools</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Meta-analysis and statistical comparison tools</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Literature gap identification algorithms</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Literature gap identification algorithms</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1" />
-                      <span>Research trend and pattern recognition</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Research trend and pattern recognition</span>
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="rounded-lg overflow-hidden shadow-lg order-first lg:order-last">
                   <img 
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" 
                     alt="Analysis Tools" 
