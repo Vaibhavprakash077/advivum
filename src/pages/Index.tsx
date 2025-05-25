@@ -55,8 +55,8 @@ export default function Index() {
     <PageLayout>
       {/* Enhanced Hero Section with Full Height and Enhanced Typography */}
       <HeroSection
-        title="ADVivum: Mentoring Minds, Shaping Futures"
-        subtitle="Empowering Research & Education"
+        title="ADVivum"
+        subtitle="Mentoring Minds, Empowering Research & Education"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
         ctaText="Explore Services"
         ctaLink="/services" 
