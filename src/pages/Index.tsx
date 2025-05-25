@@ -20,9 +20,9 @@ export default function Index() {
 
   // Custom title element with styled AD and Vivum
   const customTitle = (
-    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 relative inline-block">
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 relative inline-block px-2 py-1">
       <span className="font-bold text-white">AD</span>
-      <span className="italic bg-gradient-to-r from-[#00FFFF] via-[#00FF88] to-[#FF8C00] bg-clip-text text-transparent">Vivum</span>
+      <span className="italic bg-gradient-to-r from-[#00FFFF] via-[#00FF88] to-[#FF8C00] bg-clip-text text-transparent tracking-wide">Vivum</span>
     </h1>
   );
 
