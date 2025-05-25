@@ -6,41 +6,9 @@ import PageLayout from "@/components/layout/PageLayout";
 import { SectionTitle } from "@/components/ui/section-title";
 import { HeroSection } from "@/components/ui/hero-section";
 import { ServiceCard } from "@/components/ui/service-card";
-import { CourseCard } from "@/components/ui/course-card";
 import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in";
 import Logo from "@/components/layout/Logo";
-
-// Sample featured courses
-const featuredCourses = [
-  {
-    title: "Advanced Research Methodology",
-    description: "Learn cutting-edge research methods and analytical frameworks.",
-    date: "Starting June 15, 2025",
-    duration: "8 weeks",
-    format: "Online & In-person",
-    category: "Research Publication",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "AI Tools for Systematic Reviews",
-    description: "Master the use of AI and automation in literature reviews and evidence synthesis.",
-    date: "Starting July 20, 2025",
-    duration: "6 weeks",
-    format: "Online",
-    category: "AI for Research",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "Medical Research Writing",
-    description: "Specialized course on writing and publishing medical research papers.",
-    date: "Starting August 5, 2025",
-    duration: "10 weeks",
-    format: "Hybrid",
-    category: "Medical Education",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop"
-  }
-];
 
 export default function Index() {
   // Function to handle smooth scrolling to sections within the page
@@ -223,36 +191,6 @@ export default function Index() {
               linkHref="/services#web"
               className="animate-fade-in [animation-delay:800ms]"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Courses */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container">
-          <SectionTitle 
-            title="Featured Courses" 
-            subtitle="Enhance your skills with our expert-led programs"
-            revealOnScroll={true}
-            showLine={true}
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredCourses.map((course, index) => (
-              <CourseCard
-                key={index}
-                {...course}
-                link="https://vivum.im/login/index.php"
-              />
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90">
-              <a href="https://vivum.im/login/index.php" target="_blank" rel="noopener noreferrer">
-                View All Courses
-              </a>
-            </Button>
           </div>
         </div>
       </section>
