@@ -1,4 +1,3 @@
-
 import { Flame, BookOpen, GraduationCap, FileCheck, Sparkles, Users, Award, Building, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -19,11 +18,19 @@ export default function Index() {
     }
   };
 
+  // Custom title element with styled AD and Vivum
+  const customTitle = (
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 relative inline-block">
+      <span className="font-bold text-white">AD</span>
+      <span className="italic bg-gradient-to-r from-[#00FFFF] via-[#00FF88] to-[#FF8C00] bg-clip-text text-transparent">Vivum</span>
+    </h1>
+  );
+
   return (
     <PageLayout>
       {/* Enhanced Hero Section with Full Height and Enhanced Typography */}
       <HeroSection
-        title="ADVivum"
+        title={customTitle}
         subtitle="Mentoring Minds, Shaping Futures"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
         ctaText="Explore Services"
@@ -35,7 +42,6 @@ export default function Index() {
         useParticles={true}
         alignLeft={false}
         fullHeight={true} 
-        titleClassName="font-modern text-5xl md:text-6xl lg:text-7xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-[#00C4B4] via-[#7EDFD3] to-[#F28C38]/80 mb-3 animate-fade-in shadow-xl tracking-wide"
       />
 
       {/* Services Overview */}
