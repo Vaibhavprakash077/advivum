@@ -24,7 +24,7 @@ export default function Index() {
       {/* Enhanced Hero Section with Full Height and Enhanced Typography */}
       <HeroSection
         title="ADVivum"
-        subtitle="Mentoring Minds, Empowering Research & Education"
+        subtitle="Mentoring Minds, Shaping Futures"
         description="Empowering researchers and educators with AI-driven tools, expert mentorship, and innovative publication support."
         ctaText="Explore Services"
         ctaLink="/services" 
