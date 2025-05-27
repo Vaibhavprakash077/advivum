@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="flex justify-center items-center mb-3">
           <p>© {new Date().getFullYear()} AD Vivum. All rights reserved.</p>
           <img
-            src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
+            src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png?v=2"
             alt="AD Vivum Logo"
             className="h-6 w-6 mx-2 object-contain"
             style={{ 
@@ -82,6 +82,10 @@ export default function Footer() {
               background: "transparent"
             }}
             loading="lazy"
+            onError={(e) => {
+              console.error('Footer logo failed to load:', e);
+              e.currentTarget.style.display = 'none';
+            }}
           />
           <a href="https://advivum.im" className="hover:text-primary">advivum.im</a>
         </div>

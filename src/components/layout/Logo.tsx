@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link to="/" className="flex items-center space-x-2 group">
       <img
-        src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png"
+        src="/lovable-uploads/303c97d9-1ffa-4229-88f5-0bdd2f650a0a.png?v=2"
         alt="AD Vivum Logo"
         className="h-7 w-7 object-contain group-hover:animate-pulse"
         style={{ 
@@ -14,6 +14,10 @@ export default function Logo() {
         }}
         loading="eager"
         decoding="sync"
+        onError={(e) => {
+          console.error('Logo failed to load:', e);
+          e.currentTarget.style.display = 'none';
+        }}
       />
       <span className="inline-block font-bold text-xl tracking-tight">
         <span className="text-foreground">AD</span>
