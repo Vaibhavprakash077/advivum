@@ -81,6 +81,7 @@ export default function Footer() {
               filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
               background: "transparent"
             }}
+            loading="lazy"
           />
           <a href="https://advivum.im" className="hover:text-primary">advivum.im</a>
         </div>

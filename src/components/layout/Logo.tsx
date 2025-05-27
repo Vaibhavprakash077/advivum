@@ -12,6 +12,8 @@ export default function Logo() {
           filter: "drop-shadow(0 0 2px rgba(0,0,0,0.1))",
           background: "transparent"
         }}
+        loading="eager"
+        decoding="sync"
       />
       <span className="inline-block font-bold text-xl tracking-tight">
         <span className="text-foreground">AD</span>
