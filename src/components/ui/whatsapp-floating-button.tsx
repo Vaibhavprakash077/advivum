@@ -29,7 +29,6 @@ export default function WhatsAppFloatingButton({ className = "" }: WhatsAppFloat
         bg-gradient-to-r from-[#25D366] to-[#128C7E]
         hover:from-[#128C7E] hover:to-[#25D366]
         shadow-lg hover:shadow-xl
-        animate-pulse hover:animate-none
         transition-all duration-300 ease-out
         hover:scale-110 active:scale-95
         group
@@ -42,7 +41,7 @@ export default function WhatsAppFloatingButton({ className = "" }: WhatsAppFloat
       />
       
       {/* Glow effect */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] opacity-75 blur animate-pulse -z-10" />
+      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] opacity-30 blur -z-10" />
       
       {/* Tooltip */}
       <div className="
