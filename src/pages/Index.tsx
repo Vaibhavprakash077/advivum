@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/ui/hero-section";
 import { ServiceCard } from "@/components/ui/service-card";
 import { TrustBadges, defaultBadges } from "@/components/ui/trust-badges";
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in";
+import WhatsAppFloatingButton from "@/components/ui/whatsapp-floating-button";
 import Logo from "@/components/layout/Logo";
 
 export default function Index() {
@@ -269,6 +270,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+      
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloatingButton />
     </PageLayout>
   );
 }

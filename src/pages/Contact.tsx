@@ -14,6 +14,8 @@ import {
   Clock, 
   CheckCircle 
 } from "lucide-react";
+import WhatsAppSection from "@/components/ui/whatsapp-section";
+import WhatsAppFloatingButton from "@/components/ui/whatsapp-floating-button";
 import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
@@ -205,8 +207,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Phone</h3>
-                    <a href="tel:+919021699000" className="text-muted-foreground hover:text-primary">
-                      +91 9021699000
+                    <a href="tel:+919545685143" className="text-muted-foreground hover:text-primary">
+                      +91 9545685143
                     </a>
                   </div>
                 </div>
@@ -226,6 +228,13 @@ export default function Contact() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* WhatsApp Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-background to-muted/30">
+        <div className="container">
+          <WhatsAppSection />
         </div>
       </section>
 
@@ -303,13 +312,16 @@ export default function Contact() {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="tel:+919021699000">
+              <a href="tel:+919545685143">
                 Contact Us <Phone className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>
         </div>
       </section>
+      
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloatingButton />
     </PageLayout>
   );
 }

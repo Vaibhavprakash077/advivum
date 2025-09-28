@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import WhatsAppFooterIntegration from "../ui/whatsapp-footer-integration";
 import Logo from "./Logo";
 
 // Custom link component that handles scrolling to top
@@ -67,6 +68,7 @@ export default function Footer() {
               <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
               <a href="tel:+919545685143" className="text-muted-foreground hover:text-primary">+91 9545685143</a>
             </li>
+            <WhatsAppFooterIntegration />
           </ul>
         </div>
       </div>
