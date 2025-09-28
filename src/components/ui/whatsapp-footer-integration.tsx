@@ -13,7 +13,14 @@ export default function WhatsAppFooterIntegration() {
       });
     }
     
-    window.open(WHATSAPP_LINK, '_blank', 'noopener,noreferrer');
+    // Force open in new tab to bypass iframe restrictions
+    const link = document.createElement('a');
+    link.href = WHATSAPP_LINK;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
